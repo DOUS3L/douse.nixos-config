@@ -7,7 +7,7 @@
       enableAutosuggestions = true;
       syntaxHighlighting.enable = true;
       enableCompletion = true;
-      histSize = 100000;
+      history.size = 100000;
 
       plugins = [
         {
