@@ -1,9 +1,6 @@
 { user, pkgs, inputs, ... }:
 
 {
-
-  imports = (import ../modules/shell);
-
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];

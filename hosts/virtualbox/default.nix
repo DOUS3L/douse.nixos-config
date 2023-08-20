@@ -3,8 +3,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/desktop/gnome/default.nix
-    ../../modules/services/vscode-server.nix
+    ../../modules/nixos/desktop/gnome/default.nix
+    ../../modules/nixos/services/vscode-server.nix
 
   ];
 
