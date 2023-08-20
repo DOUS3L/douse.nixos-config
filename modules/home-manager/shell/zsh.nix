@@ -5,7 +5,7 @@
     zsh = {
       enable = true;
       enableAutosuggestions = true;
-      syntaxHighlighting.enable = true;
+#      syntaxHighlighting.enable = true;
       enableCompletion = true;
       history.size = 100000;
 
