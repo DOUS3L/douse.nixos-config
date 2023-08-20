@@ -1,7 +1,8 @@
 { pkgs, unstable, user, ... }:
 
 {
-  imports = (import ../modules/home-manager/shell);
+  imports = (import ../modules/home-manager/shell) ++
+    (import ../modules/home-manager/editor);
 
   home = {
     username = "${user}";
