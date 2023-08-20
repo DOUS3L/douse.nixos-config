@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
+let
+  link = config.lib.file.mkOutOfStoreSymlink;
+in
 {
   home = {
     packages = with pkgs; [
@@ -11,7 +14,8 @@
     file = {
       ".config/astronvim" = {
         enable = true;
-        source = "../../../files/dotconfig/astronvim";
+        # TODO: separate path prefix later into its own variable
+        source = link ../../../files/dotconfig/astronvim;
         recursive = true;
         target = ".config/astronvim";
       };
