@@ -33,7 +33,7 @@ in
         home-manager.users.${user} = {
           imports =
             [ (import ./home.nix) ] 
-            # ++ [ (import ./vm/home.nix) ]
+            ++ [ (import ./virtualbox/home.nix) ]
           ;
         };
       }
