@@ -6,9 +6,7 @@
     extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.zsh;
   };
-  security.sudo.wheelNeedsPassword = false; 
-
-
+  security.sudo.wheelNeedsPassword = false;
 
   time.timeZone = "Asia/Jakarta";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -22,7 +20,7 @@
     source-code-pro
     jetbrains-mono
     font-awesome
-    corefonts 
+    corefonts
     (nerdfonts.override {
       fonts = [
         "FiraCode"
@@ -31,7 +29,7 @@
       ];
     })
   ];
-  
+
   environment = {
     variables = {
       EDITOR = "nvim";
@@ -49,7 +47,7 @@
       neovim
       git
       nil
-      nixpkgs-fmt 
+      nixpkgs-fmt
     ];
   };
 
@@ -84,7 +82,7 @@
   hardware.pulseaudio.enable = false;
 
   nix = {
-    settings ={
+    settings = {
       auto-optimise-store = true;
     };
     gc = {
