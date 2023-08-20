@@ -1,6 +1,9 @@
 { user, pkgs, inputs, ... }:
 
 {
+
+  imports = (import ../modules/shell);
+
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
@@ -21,6 +24,7 @@
     jetbrains-mono
     font-awesome
     corefonts
+    meslo-lgs-nf
     (nerdfonts.override {
       fonts = [
         "FiraCode"
