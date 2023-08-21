@@ -1,6 +1,23 @@
 { user, pkgs, inputs, ... }:
 
 {
+  imports = [
+    <sops-nix/modules/sops>
+  ];
+
+  sops = {
+    defaultSopsFile = ../secrets/secrets.yaml;
+    age = {
+      sshKeyPaths = ["~/.ssh/douse-nixos"];
+    };
+    secrets = {
+      ssh_keys.douse-nixos = {
+        private = {};
+        public = {};
+      };
+    };
+  };
+
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
@@ -13,6 +30,8 @@
   i18n.extraLocaleSettings = {
     LC_ALL = "en_US.UTF-8";
   };
+
+
 
   fonts.fonts = with pkgs; [
     carlito
@@ -38,12 +57,15 @@
     };
     shells = [ pkgs.zsh ];
     systemPackages = with pkgs; [
+      age
       killall
       nano
       pciutils
       usbutils
       inetutils
+      sops
       wget
+      xclip
       # TODO: separate later
       neovim
       git

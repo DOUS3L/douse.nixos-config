@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, nixpkgs-unstable, user, home-manager, ... }:
+{ lib, inputs, nixpkgs, nixpkgs-unstable, user, home-manager, sops-nix, ... }:
 
 let
   system = "x86_64-linux";
@@ -20,6 +20,9 @@ in
     modules = [
       ./virtualbox
       ./configuration.nix
+
+
+      sops-nix.nixosModules.sops
 
       home-manager.nixosModules.home-manager
       {
