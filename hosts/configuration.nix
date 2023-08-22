@@ -1,22 +1,6 @@
-{ user, pkgs, inputs, ... }:
+{ user, pkgs, inputs, config, ... }:
 
 {
-  imports = [
-    <sops-nix/modules/sops>
-  ];
-
-  sops = {
-    defaultSopsFile = ../secrets/secrets.yaml;
-    age = {
-      sshKeyPaths = ["~/.ssh/douse-nixos"];
-    };
-    secrets = {
-      ssh_keys.douse-nixos = {
-        private = {};
-        public = {};
-      };
-    };
-  };
 
   users.users.${user} = {
     isNormalUser = true;

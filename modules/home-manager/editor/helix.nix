@@ -1,4 +1,4 @@
-{ pkgs, unstable, ...}:
+{ pkgs, unstable, ... }:
 {
   programs = {
     helix = {
@@ -10,11 +10,11 @@
           lsp.display-messages = true;
         };
         keys.normal = {
-           space.space = "file_picker";
-           space.w = ":w";
-           space.q = ":q";
-           esc = [ "collapse_selection" "keep_primary_selection" ];
-         };
+          space.space = "file_picker";
+          space.w = ":w";
+          space.q = ":q";
+          esc = [ "collapse_selection" "keep_primary_selection" ];
+        };
       };
     };
   };

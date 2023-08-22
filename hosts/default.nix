@@ -20,9 +20,7 @@ in
     modules = [
       ./virtualbox
       ./configuration.nix
-
-
-      sops-nix.nixosModules.sops
+      #sops-nix.nixosModules.sops
 
       home-manager.nixosModules.home-manager
       {
@@ -35,10 +33,14 @@ in
 
         home-manager.users.${user} = {
           imports =
-            [ (import ./home.nix) ] 
+            [ (import ./home.nix) ]
             ++ [ (import ./virtualbox/home.nix) ]
           ;
         };
+
+        home-manager.sharedModules = [
+          sops-nix.homeManagerModules.sops
+        ];
       }
     ];
   };

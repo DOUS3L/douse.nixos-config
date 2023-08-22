@@ -1,8 +1,8 @@
 keys:
-  - &douse-nixos age12mh3wrwj3j3kcv2gftqj8azh36ayfya02qwdzlkgc4pu2zazj3sqy3aacr
+  - &virtualbox age1dg6tkl5s88ru9wygqua8ulxqx3u2r667c87nxtsmx7hyzrxewuzsuqupjc
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
       - age:
-        - *douse-nixos
+        - *virtualbox
  

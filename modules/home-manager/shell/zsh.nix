@@ -5,24 +5,24 @@
     zsh = {
       enable = true;
       enableAutosuggestions = true;
-#      syntaxHighlighting.enable = true;
+      #      syntaxHighlighting.enable = true;
       enableCompletion = true;
       history.size = 100000;
 
       initExtra = ''
-      # Navigation with ranger-fm
-      ranger_cd() {
-        temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
-        ranger --choosedir="$temp_file" -- "''${@:-$PWD}"
-        if chosen_dir="$(cat -- "$temp_file")" && [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ]; then
-            cd -- "$chosen_dir"
-        fi
-        rm -f -- "$temp_file"
-      }
+        # Navigation with ranger-fm
+        ranger_cd() {
+          temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
+          ranger --choosedir="$temp_file" -- "''${@:-$PWD}"
+          if chosen_dir="$(cat -- "$temp_file")" && [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ]; then
+              cd -- "$chosen_dir"
+          fi
+          rm -f -- "$temp_file"
+        }
 
-      bindkey -s '^o' 'ranger_cd\n'
+        bindkey -s '^o' 'ranger_cd\n'
 
-      bindkey '^y' 'autosuggest-accept' 
+        bindkey '^y' 'autosuggest-accept' 
       '';
 
       plugins = [

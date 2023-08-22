@@ -2,7 +2,7 @@
 
 {
   programs = {
-    dconf.enable=true;
+    dconf.enable = true;
   };
 
   services = {
