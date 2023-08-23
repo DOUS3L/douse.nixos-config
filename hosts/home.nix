@@ -25,12 +25,10 @@
     username = "${user}";
     homeDirectory = "/home/${user}";
 
-
-
     file = {
       "wallpapers" = {
         enable = true;
-        source = ../../../files/wallpapers;
+        source = ../files/wallpapers;
         recursive = true;
         target = "wallpapers";
       };

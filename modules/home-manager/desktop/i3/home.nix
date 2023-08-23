@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 let
   modifier = "Mod4";
   workspace = {
@@ -19,21 +19,23 @@ in
       dunst
     ];
   };
+
   xsession = {
     enable = true;
     windowManager.i3 = {
       enable = true;
       config = {
         inherit modifier;
-        window = {
-          border = 2;
-          commands = [
-            {
-              command = "floating enable, resize set 1400 800, border pixel 2, move scratchpad";
-              criteria = { instance = "floatingterm"; };
-            }
-          ];
-        };
+
+        bars = [
+          # {
+          #   statusCommand = "i3blocks";
+          #   fonts = {
+          #     names = ["Meslo Nerd Font"];
+          #     size = 10.0;
+          #   };
+         #  }
+        ];
 
         gaps = {
           inner = 4;
@@ -105,11 +107,27 @@ in
 
         startup = [
           {
-            command = "${pkgs.feh}/bin/feh --randomize --bg-fill ~/wallpapers/*";
+            command = "${pkgs.feh}/bin/feh --randomize --bg-fill ${config.home.homeDirectory}/wallpapers/*";
+            always = true;
+            notification = false;
+          }
+          {
+            command = "systemctl --user restart polybar.service";
             always = true;
             notification = false;
           }
         ];
+
+        window = {
+          border = 2;
+          commands = [
+            {
+              command = "floating enable, resize set 1400 800, border pixel 2, move scratchpad";
+              criteria = { instance = "floatingterm"; };
+            }
+          ];
+        };
+        
 
       };
     };

@@ -28,6 +28,7 @@
         "FiraCode"
         "Hack"
         "DroidSansMono"
+        "Meslo"
       ];
     })
   ];
