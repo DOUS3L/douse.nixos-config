@@ -25,6 +25,17 @@
     username = "${user}";
     homeDirectory = "/home/${user}";
 
+
+
+    file = {
+      "wallpapers" = {
+        enable = true;
+        source = ../../../files/wallpapers;
+        recursive = true;
+        target = "wallpapers";
+      };
+    };
+
     packages = with pkgs; [
       # terminal
       ranger
@@ -48,6 +59,9 @@
       unzip
       unrar
       zip
+
+      # misc
+      flameshot
 
     ];
 

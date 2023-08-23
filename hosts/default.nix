@@ -14,7 +14,7 @@ in
   virtualbox = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs user;
+      inherit inputs user unstable;
     };
 
     modules = [

@@ -27,7 +27,13 @@
   services = {
     openssh.enable = true;
     vscode-server.enable = true;
-    xserver.layout = "us";
+    xserver = {                                 
+      layout = "us";
+      resolutions = [
+        { x = 1440; y = 900; }
+        #{ x = 1920; y = 1080; }
+      ];
+    };
   };
 
 

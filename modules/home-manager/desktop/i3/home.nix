@@ -22,6 +22,7 @@ in
   xsession = {
     enable = true;
     windowManager.i3 = {
+      enable = true;
       config = {
         inherit modifier;
         window = {
@@ -75,7 +76,10 @@ in
           "${modifier}+Shift+c" = "reload"; # reload configuration
           "${modifier}+Shift+r" = "restart"; # restart i3 inplace
           "${modifier}+Shift+q" = "kill"; # kill focused window
-          "${modifier}+f" = "fullscreen toggle"; 
+          "${modifier}+f" = "fullscreen toggle";
+
+          # custom scripts
+          "${modifier}+n" = "i3-msg workspace $(( $(i3-msg -t get_workspaces | jq '.[].num' | sort -rn | head -1) + 1 ))";
 
           # modes
           "${modifier}+r" = "mode resize";
@@ -91,7 +95,7 @@ in
           "Escape" = "mode default";
         };
 
-        mode."(S)uspend, (L)ogout, (R)eboot, (P)oweroff" = {
+        modes."(S)uspend, (L)ogout, (R)eboot, (P)oweroff" = {
           "r" = "exec --no-startup-id systemctl reboot";
           "s" = "exec --no-startup-id systemctl suspend; mode default";
           "l" = "exit";
@@ -101,27 +105,12 @@ in
 
         startup = [
           {
-            command = "";
+            command = "${pkgs.feh}/bin/feh --randomize --bg-fill ~/wallpapers/*";
             always = true;
             notification = false;
           }
-          {
-            command = "";
-            always = true;
-            notification = false;
-          }
-          {
-            command = "";
-            always = true;
-            notification = false;
-          }
-          {
-            command = "";
-            always = true;
-            notification = false;
-          }
-
         ];
+
       };
     };
   };

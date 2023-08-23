@@ -40,6 +40,7 @@
     shells = [ pkgs.zsh ];
     systemPackages = with pkgs; [
       age
+      fzf
       killall
       nano
       pciutils
@@ -57,6 +58,10 @@
   };
 
   programs = {
+    fzf = {
+      keybindings = true;
+      fuzzyCompletion = true;
+    };
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [
