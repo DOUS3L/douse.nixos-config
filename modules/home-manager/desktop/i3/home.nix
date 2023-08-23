@@ -21,7 +21,7 @@ in
     file = {
       "i3blocks" = {
         enable = true;
-        source = ../../../../dotconfig/i3blocks;
+        source = ../../../../files/dotconfig/i3blocks;
         recursive = true;
         target = "./config/i3blocks";
       };
