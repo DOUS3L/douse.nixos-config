@@ -1,5 +1,9 @@
 { ... }:
 {
+  imports = [
+    ../../modules/home-manager/desktop/i3/home.nix
+  ];
+
   programs = {
     zsh = {
       shellAliases = {

@@ -15,8 +15,6 @@
     LC_ALL = "en_US.UTF-8";
   };
 
-
-
   fonts.fonts = with pkgs; [
     carlito
     vegur
