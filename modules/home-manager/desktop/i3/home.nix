@@ -18,6 +18,14 @@ in
     packages = with pkgs; [
       dunst
     ];
+    file = {
+      "i3blocks" = {
+        enable = true;
+        source = ../../../../dotconfig/i3blocks;
+        recursive = true;
+        target = "./config/i3blocks";
+      };
+    };
   };
 
   xsession = {
@@ -28,13 +36,13 @@ in
         inherit modifier;
 
         bars = [
-          # {
-          #   statusCommand = "i3blocks";
-          #   fonts = {
-          #     names = ["Meslo Nerd Font"];
-          #     size = 10.0;
-          #   };
-         #  }
+          {
+            statusCommand = "i3blocks";
+            fonts = {
+              names = ["Meslo Nerd Font"];
+              size = 10.0;
+            };
+          }
         ];
 
         gaps = {
@@ -108,11 +116,6 @@ in
         startup = [
           {
             command = "${pkgs.feh}/bin/feh --randomize --bg-fill ${config.home.homeDirectory}/wallpapers/*";
-            always = true;
-            notification = false;
-          }
-          {
-            command = "systemctl --user restart polybar.service";
             always = true;
             notification = false;
           }

@@ -2,7 +2,6 @@
 {
   imports = [
     ../../modules/home-manager/desktop/i3/home.nix
-    ../../modules/home-manager/services/polybar.nix
   ];
 
   programs = {
