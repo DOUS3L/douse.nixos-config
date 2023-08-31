@@ -21,9 +21,9 @@ in
     file = {
       "i3blocks" = {
         enable = true;
-        source = ../../../../files/dotconfig/i3blocks;
+        source = config.lib.file.mkOutOfStoreSymlink ../../../../files/dotconfig/i3blocks;
         recursive = true;
-        target = "./config/i3blocks";
+        target = "./.config/i3blocks";
       };
     };
   };
@@ -39,7 +39,7 @@ in
           {
             statusCommand = "i3blocks";
             fonts = {
-              names = ["Meslo Nerd Font"];
+              names = ["MesloLGS NF"];
               size = 10.0;
             };
           }

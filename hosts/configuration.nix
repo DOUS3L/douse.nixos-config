@@ -41,6 +41,7 @@
     shells = [ pkgs.zsh ];
     systemPackages = with pkgs; [
       age
+      busybox
       fzf
       killall
       nano

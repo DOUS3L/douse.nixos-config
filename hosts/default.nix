@@ -9,6 +9,7 @@ let
   };
 
   lib = nixpkgs.lib;
+
 in
 {
   virtualbox = lib.nixosSystem {
