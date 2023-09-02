@@ -42,6 +42,7 @@ in
 
         bars = [
           {
+            command = "i3bar --transparency";
             statusCommand = "i3blocks";
             fonts = {
               names = ["MesloLGS NF"];
@@ -50,11 +51,11 @@ in
             # extraConfig = "separator_symbol \" / \" \n";
             colors = {
               background = "$color0";
-            };
-            focusedWorksspace = {
-              background = "#color1";
-              border = "$color3";
-              text = "$color7";
+              focusedWorkspace = {
+                border = "$color3";
+                background = "$color1";
+                text = "$color7";
+              };
             };
           }
         ];
@@ -134,7 +135,7 @@ in
             notification = false;
           }
           {
-            command = "${pkgs.pywal}/bin/wal ~/wallpapers --backend random -o wal-set";
+            command = "${pkgs.pywal}/bin/wal -i ~/wallpapers --backend random";
             always = true;
             notification = false;
           }
@@ -176,6 +177,8 @@ in
       client.unfocused        $bg     $bg     $color0  $bg       $bg
 
       client.background       $bg
+
+      set_from_resource $barcolor i3wm.color0
       '';
     };
   };
