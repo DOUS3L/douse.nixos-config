@@ -1,4 +1,0 @@
-[
-  ./neovim.nix
-  ./helix.nix
-]

@@ -1,9 +1,14 @@
 { config, pkgs, unstable, user, ... }:
 
 {
-  imports = (import ../modules/zsh/home.nix) ++
-    (import ../modules/helix/home.nix) ++
-    (import ../modules/neovim/home.nix);
+  #imports = (import ../modules/zsh/home.nix) ++
+  #  (import ../modules/helix/home.nix) ++
+  #  (import ../modules/neovim/home.nix);
+  imports = [
+    ../modules/zsh/home.nix
+    ../modules/helix/home.nix
+    ../modules/neovim/home.nix
+  ];
 
   # need to enable sops-nix service manually
   # systemctl --user start sops-nix.service

@@ -1,8 +1,10 @@
 { ... }:
 {
   imports = [
-    ../../modules/home-manager/desktop/i3/home.nix
+    ../../modules/i3/home.nix
   ];
+
+
 
   programs = {
     zsh = {

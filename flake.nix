@@ -14,6 +14,7 @@
 
   };
 
+
   outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, sops-nix, ... }:
     let
       # default user
