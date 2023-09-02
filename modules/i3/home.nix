@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, unstable, ... }:
 let
   modifier = "Mod4";
   workspace = {
@@ -14,6 +14,11 @@ let
   };
 in
 {
+  # theming with pywal
+  imports = [
+    ../pywal/home.nix
+  ];
+
   home = {
     packages = with pkgs; [
       dunst
@@ -43,6 +48,14 @@ in
               size = 10.0;
             };
             # extraConfig = "separator_symbol \" / \" \n";
+            colors = {
+              background = "$color0";
+            };
+            focusedWorksspace = {
+              background = "#color1";
+              border = "$color3";
+              text = "$color7";
+            };
           }
         ];
 
@@ -120,6 +133,11 @@ in
             always = true;
             notification = false;
           }
+          {
+            command = "${pkgs.pywal}/bin/wal ~/wallpapers --backend random -o wal-set";
+            always = true;
+            notification = false;
+          }
         ];
 
         window = {
@@ -134,8 +152,30 @@ in
         
 
       };
+      # mostly settings for pywal
       extraConfig = ''
+      set_from_resource $color0 i3wm.color0 #f0f0f0
+      set_from_resource $color1 i3wm.color1 #f0f0f0
+      set_from_resource $color2 i3wm.color2 #f0f0f0
+      set_from_resource $color3 i3wm.color3 #f0f0f0
+      set_from_resource $color4 i3wm.color4 #f0f0f0
+      set_from_resource $color5 i3wm.color5 #f0f0f0
+      set_from_resource $color6 i3wm.color6 #f0f0f0
+      set_from_resource $color7 i3wm.color7 #f0f0f0
+      set_from_resource $color8 i3wm.color8 #f0f0f0
 
+      set_from_resource $fg i3wm.color3 #f0f0f0
+      set_from_resource $bg i3wm.color8 #f0f0f0
+
+      set_from_resource $fg i3wm.color3 #f0f0f0
+      set_from_resource $bg i3wm.color8 #f0f0f0
+
+      # class                 border  backgr. text     indicator child_border
+      client.focused          $fg     $fg     $color0  $fg       $fg
+      client.focused_inactive $bg     $bg     $color0  $bg       $bg
+      client.unfocused        $bg     $bg     $color0  $bg       $bg
+
+      client.background       $bg
       '';
     };
   };
