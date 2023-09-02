@@ -1,6 +1,6 @@
-*{
+*{{
     accent: {foreground};
 	foreground: {foreground};
 	background: {background};	
-	background-alt: {background};
-}
+	background-alt: {color1};
+}}
