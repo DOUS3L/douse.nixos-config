@@ -8,7 +8,7 @@
         cursor = {
           style = {
             shape = "Underline";
-            blinking = "One";
+            blinking = "On";
           };
           vi_mode_style.shape = "Underline";
         };
@@ -17,9 +17,9 @@
         };
         font = {
           normal = {
-            family = "LigaSFMonoNerdFont";
-            style = "Medium";
+            family = "FantasqueSansM Nerd Font";
           };
+          size = 12.0;
         };
         window = {
           opacity = 0.84;

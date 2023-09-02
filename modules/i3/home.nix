@@ -17,7 +17,6 @@ in
   # theming with pywal
   imports = [
     ../pywal/home.nix
-    ../alacritty/home.nix
   ];
 
   home = {
@@ -46,7 +45,7 @@ in
             command = "i3bar --transparency";
             statusCommand = "i3blocks";
             fonts = {
-              names = [ "MesloLGS NF" ];
+              names = [ "IosevkaTerm Nerd Font" ];
               size = 10.0;
             };
             # extraConfig = "separator_symbol \" / \" \n";

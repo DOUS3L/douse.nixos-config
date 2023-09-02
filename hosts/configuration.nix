@@ -28,7 +28,13 @@
         "Hack"
         "DroidSansMono"
         "Meslo"
-        "LigaSFMono"
+        "Hack"
+        "Iosevka"
+        "IosevkaTerm"
+        "JetBrainsMono"
+        "ComicShannsMono"
+        "CodeNewRoman"
+        "FantasqueSansMono"
       ];
     })
   ];
@@ -42,6 +48,7 @@
     systemPackages = with pkgs; [
       age
       busybox
+      font-manager
       fzf
       killall
       nano

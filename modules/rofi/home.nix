@@ -1,7 +1,9 @@
 
 { pkgs, unstable, home, ... }:
 {
-  home.packages = with pkgs; [
-    rofi
-  ];
+  programs = {
+    rofi = {
+      enable = true;
+    };
+  };
 }
