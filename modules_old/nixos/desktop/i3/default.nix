@@ -16,7 +16,5 @@
         package = unstable.i3;
       };
     };
-
-
   };
 }

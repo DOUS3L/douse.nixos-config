@@ -3,8 +3,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nixos/desktop/i3/default.nix
-    ../../modules/nixos/services/vscode-server.nix
+    ../../modules/i3/default.nix
+    ../../modules/vscode-server/default.nix
   ];
 
   users.users.${user} = {

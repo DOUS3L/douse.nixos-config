@@ -21,7 +21,7 @@ in
     file = {
       "i3blocks" = {
         enable = true;
-        source = config.lib.file.mkOutOfStoreSymlink ../../../../files/dotconfig/i3blocks;
+        source = config.lib.file.mkOutOfStoreSymlink ./i3blocks;
         recursive = true;
         target = "./.config/i3blocks";
       };
@@ -42,6 +42,7 @@ in
               names = ["MesloLGS NF"];
               size = 10.0;
             };
+            # extraConfig = "separator_symbol \" / \" \n";
           }
         ];
 
@@ -133,6 +134,9 @@ in
         
 
       };
+      extraConfig = ''
+
+      '';
     };
   };
 }
