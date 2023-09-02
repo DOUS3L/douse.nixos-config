@@ -17,6 +17,7 @@ in
   # theming with pywal
   imports = [
     ../pywal/home.nix
+    ../alacritty/home.nix
   ];
 
   home = {
@@ -149,6 +150,7 @@ in
               criteria = { instance = "floatingterm"; };
             }
           ];
+          titlebar = false;
         };
 
 

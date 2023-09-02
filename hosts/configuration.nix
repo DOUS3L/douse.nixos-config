@@ -28,6 +28,7 @@
         "Hack"
         "DroidSansMono"
         "Meslo"
+        "LigaSFMono"
       ];
     })
   ];
