@@ -2,5 +2,5 @@
     accent: {foreground};
 	foreground: {foreground};
 	background: {background};	
-	background-alt: {color1};
+	background-alt: {color2};
 }}

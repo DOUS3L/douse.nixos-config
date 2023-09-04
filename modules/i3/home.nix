@@ -168,9 +168,7 @@ in
 
         set_from_resource $fg i3wm.color3 #f0f0f0
         set_from_resource $bg i3wm.color8 #f0f0f0
-
-        set_from_resource $fg i3wm.color3 #f0f0f0
-        set_from_resource $bg i3wm.color8 #f0f0f0
+        set_from_resource $bg_alt i3wm.color
 
         # class                 border  backgr. text     indicator child_border
         client.focused          $fg     $fg     $color0  $fg       $fg

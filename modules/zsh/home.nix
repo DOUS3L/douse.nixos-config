@@ -23,6 +23,8 @@
         bindkey -s '^o' 'ranger_cd\n'
 
         bindkey '^y' 'autosuggest-accept' 
+
+        (cat ~/.cache/wal/sequences &)
       '';
 
       plugins = [
