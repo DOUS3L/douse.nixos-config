@@ -139,6 +139,11 @@ in
             always = true;
             notification = false;
           }
+          {
+            command = "${pkgs.picom}/bin/picom -b";
+            always = false;
+            notification = false;
+          }
         ];
 
         window = {

@@ -3,6 +3,7 @@
   imports = [
     ../../modules/i3/home.nix
     ../../modules/picom/home.nix
+    ../../modules/dunst/home.nix
   ];
 
 
