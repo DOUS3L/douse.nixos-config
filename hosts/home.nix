@@ -12,6 +12,10 @@
     ../modules/neovim/home.nix
   ];
 
+  xdg = {
+    enable = true;
+  };
+
   # need to enable sops-nix service manually
   # systemctl --user start sops-nix.service
   sops = {
@@ -70,6 +74,7 @@
       flameshot
 
     ];
+
 
     stateVersion = "23.05";
   };

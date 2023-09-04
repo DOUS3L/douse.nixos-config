@@ -2,6 +2,6 @@
 {
   services.dunst = {
     enable = true;
-    configFile = "${config.home.homeDirectory}/.cache/dunstrc_v2";
+    configFile = "${config.xdg.cacheHome}/wal/dunstrc_v1";
   };
 }

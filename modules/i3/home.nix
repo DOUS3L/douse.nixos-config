@@ -144,6 +144,11 @@ in
             always = false;
             notification = false;
           }
+          {
+            command = "pkill dunst";
+            always = true;
+            notification = false;
+          }
         ];
 
         window = {

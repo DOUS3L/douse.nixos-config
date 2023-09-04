@@ -24,6 +24,10 @@
 
         bindkey '^y' 'autosuggest-accept' 
 
+        # ctrl arrow left and right to move cursor
+        bindkey -s '\e[1;5D' '\eb'
+        bindkey -s '\e[1;5C' '\ec'
+
         (cat ~/.cache/wal/sequences &)
       '';
 
