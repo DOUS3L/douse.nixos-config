@@ -6,6 +6,7 @@
   #  (import ../modules/neovim/home.nix);
   imports = [
     ../modules/alacritty/home.nix
+    ../modules/wezterm/home.nix
     ../modules/rofi/home.nix
     ../modules/zsh/home.nix
     ../modules/helix/home.nix

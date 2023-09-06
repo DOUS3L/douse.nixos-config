@@ -30,5 +30,5 @@ label=battery
 interval=30
 
 [time]
-command=date '+%Y.%m.%d / %A / %H:%M'
+command=date '+%x / %A / %H:%M  '
 interval=5

@@ -9,9 +9,15 @@
   security.sudo.wheelNeedsPassword = false;
 
   time.timeZone = "Asia/Jakarta";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ALL = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    supportedLocales = [
+      "en_US.UTF-8/UTF-8"
+      "ja_JP.UTF-8/UTF-8"
+    ];
+    extraLocaleSettings = {
+      LC_TIME = "ja_JP.utf8";
+    };
   };
 
   fonts.fonts = with pkgs; [
@@ -47,7 +53,7 @@
     shells = [ pkgs.zsh ];
     systemPackages = with pkgs; [
       age
-      busybox
+      coreutils-full
       font-manager
       fzf
       killall
