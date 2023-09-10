@@ -17,7 +17,7 @@ in
   zephyrus = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs user unstable oceanedge-user;
+      inherit inputs user unstable oceanedge-user bluewheels-user;
     };
 
 
@@ -39,7 +39,7 @@ in
 
         home-manager.users.${user} = {
           imports =
-            [ (import ../profiles/${user}/home.nix)]
+            [ (import ../profiles/${user}/home.nix) ]
             ++ [ (import ./home.nix) ]
             ++ [ (import ./zephyrus/home.nix) ]
           ;
@@ -47,7 +47,7 @@ in
 
         home-manager.users.${oceanedge-user} = {
           imports =
-            [ (import ../profiles/${oceanedge-user}/home.nix)]
+            [ (import ../profiles/${oceanedge-user}/home.nix) ]
             ++ [ (import ./home.nix) ]
             ++ [ (import ./zephyrus/home.nix) ]
           ;
@@ -55,7 +55,7 @@ in
 
         home-manager.users.${bluewheels-user} = {
           imports =
-            [ (import ../profiles/${bluewheels-user}/home.nix)]
+            [ (import ../profiles/${bluewheels-user}/home.nix) ]
             ++ [ (import ./home.nix) ]
             ++ [ (import ./zephyrus/home.nix) ]
           ;

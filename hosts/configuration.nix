@@ -95,6 +95,10 @@
     neovim = {
       enable = true;
     };
+    nm-applet = {
+      enable = true;
+      indicator = false;
+    };
     zsh.enable = true;
   };
 
@@ -109,8 +113,6 @@
     };
   };
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
 
   nix = {
     settings = {

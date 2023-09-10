@@ -1,4 +1,4 @@
-{ user , ... }:
+{ user, ... }:
 {
   home = {
     username = "${user}";

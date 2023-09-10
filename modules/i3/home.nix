@@ -74,6 +74,10 @@ in
           "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
           ## rofi
           "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show drun -theme ~/.config/rofi/launcher.rasi";
+          ## pavucontrol
+          "${modifier}+v" = ''[instance="pavucontrol"] scratchpad show, move position center'';
+          ## floating alacritty
+          "${modifier}+t" = ''[instance="floatingterm"] scratchpad show, move position center'';
 
           # change focused window
           "${modifier}+h" = "focus left";
@@ -169,6 +173,11 @@ in
           #  notification = false;
           #}
           {
+            command = "${pkgs.alacritty}/bin/alacritty --class floatingterm &";
+            always = false;
+            notification = false;
+          }
+          {
             command = "${pkgs.pywal}/bin/wal -i ~/wallpapers";
             always = true;
             notification = false;
@@ -188,6 +197,11 @@ in
             always = true;
             notification = false;
           }
+          {
+            command = "${pkgs.pavucontrol}/bin/pavucontrol &";
+            always = true;
+            notification = false;
+          }
         ];
 
         window = {
@@ -196,6 +210,10 @@ in
             {
               command = "floating enable, resize set 1400 800, border pixel 2, move scratchpad";
               criteria = { instance = "floatingterm"; };
+            }
+            {
+              command = "floating enable, resize set 800 800, move scratchpad";
+              criteria = { instance = "pavucontrol"; class = "Pavucontrol"; };
             }
           ];
           titlebar = false;
