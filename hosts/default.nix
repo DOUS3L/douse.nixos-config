@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, nixpkgs-unstable, user, home-manager, sops-nix, ... }:
+{ lib, inputs, nixpkgs, nixpkgs-unstable, user, oceanedge-user, bluewheels-user, home-manager, sops-nix, ... }:
 
 let
   system = "x86_64-linux";
@@ -37,6 +37,15 @@ in
           imports =
             [ (import ./home.nix) ]
             ++ [ (import ./zephyrus/home.nix) ]
+            ++ [ (import ../profiles/${user}/home.nix)]
+          ;
+        };
+
+        home-manager.users.${oceanedge-user} = {
+          imports =
+            [ (import ./home.nix) ]
+            ++ [ (import ./zephyrus/home.nix) ]
+            ++ [ (import ../profiles/${oceanedge-user}/home.nix)]
           ;
         };
 

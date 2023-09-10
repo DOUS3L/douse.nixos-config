@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, user, ... }:
+{ config, pkgs, unstable, ... }:
 
 {
   #imports = (import ../modules/zsh/home.nix) ++
@@ -35,8 +35,6 @@
   };
 
   home = {
-    username = "${user}";
-    homeDirectory = "/home/${user}";
 
     file = {
       "wallpapers" = {

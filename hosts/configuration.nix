@@ -53,17 +53,21 @@
     shells = [ pkgs.zsh ];
     systemPackages = with pkgs; [
       age
+      cargo
       coreutils-full
       font-manager
       fzf
+      gcc
       killall
       nano
       pciutils
       usbutils
       inetutils
       sops
+      sysstat
       wget
       xclip
+      xorg.xdpyinfo
       # TODO: separate later
       neovim
       git

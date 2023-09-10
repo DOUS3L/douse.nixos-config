@@ -5,12 +5,20 @@
     ./hardware-configuration.nix
     ../../modules/i3/default.nix
   ];
+  networking.hostName = "zephyrus";
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+
       grub = {
         enable = true;
-        device = "/dev/sda";
+        efiSupport = true;
+        devices = [ "nodev" ];
         useOSProber = true;
         configurationLimit = 15;
       };
@@ -22,9 +30,11 @@
   services = {
     openssh.enable = true;
     xserver = {
+      dpi = 120;
+      upscaleDefaultCursor = true;
       layout = "us";
       resolutions = [
-        { x = 2560; y = 1440; }
+        { x = 2560; y = 1600; }
       ];
     };
   };

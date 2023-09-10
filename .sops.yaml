@@ -1,8 +1,10 @@
 keys:
   - &virtualbox age1dg6tkl5s88ru9wygqua8ulxqx3u2r667c87nxtsmx7hyzrxewuzsuqupjc
+  - &zephyrus age1dg6tkl5s88ru9wygqua8ulxqx3u2r667c87nxtsmx7hyzrxewuzsuqupjc
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
       - age:
         - *virtualbox
+        - *zephyrus
  

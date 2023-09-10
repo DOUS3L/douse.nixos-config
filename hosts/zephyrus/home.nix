@@ -6,6 +6,16 @@
     ../../modules/dunst/home.nix
   ];
 
+  programs = {
+    alacritty = {
+      settings = {
+        env = {
+          WINIT_X11_SCALE_FACTOR = "1.5";
+        };
+      };
+    };
+  };
+
 
 
   #programs = {

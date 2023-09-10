@@ -19,12 +19,14 @@
     let
       # default user
       user = "aldouse";
+      oceanedge-user = "oceanedge";
+      bluewheels-user = "bluewheels";
     in
     {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit user inputs nixpkgs nixpkgs-unstable home-manager sops-nix;
+          inherit user oceanedge-user bluewheels-user inputs nixpkgs nixpkgs-unstable home-manager sops-nix;
         }
       );
     };
