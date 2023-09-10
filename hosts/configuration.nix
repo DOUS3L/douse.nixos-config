@@ -1,11 +1,13 @@
 { user, pkgs, inputs, config, ... }:
 
 {
-  users.users.${user} = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-    shell = pkgs.zsh;
-  };
+  # users.users.${user} = {
+  #   isNormalUser = true;
+  #   extraGroups = [ "wheel" "networkmanager" ];
+  #   shell = pkgs.zsh;
+  #   home = "/home/${user}";
+  # };
+
   security.sudo.wheelNeedsPassword = false;
 
   time.timeZone = "Asia/Jakarta";

@@ -17,12 +17,15 @@ in
   zephyrus = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs user unstable;
+      inherit inputs user unstable oceanedge-user;
     };
+
 
     modules = [
       ./zephyrus
       ./configuration.nix
+      ../profiles/aldouse
+      ../profiles/oceanedge
 
       home-manager.nixosModules.home-manager
       {
@@ -30,22 +33,23 @@ in
         home-manager.useUserPackages = true;
 
         home-manager.extraSpecialArgs = {
-          inherit unstable user;
+          inherit unstable user oceanedge-user bluewheels-user;
         };
 
         home-manager.users.${user} = {
           imports =
-            [ (import ./home.nix) ]
+            [ (import ../profiles/${user}/home.nix)]
+            ++ [ (import ./home.nix) ]
             ++ [ (import ./zephyrus/home.nix) ]
-            ++ [ (import ../profiles/${user}/home.nix)]
           ;
+
         };
 
         home-manager.users.${oceanedge-user} = {
           imports =
-            [ (import ./home.nix) ]
+            [ (import ../profiles/${oceanedge-user}/home.nix)]
+            ++ [ (import ./home.nix) ]
             ++ [ (import ./zephyrus/home.nix) ]
-            ++ [ (import ../profiles/${oceanedge-user}/home.nix)]
           ;
         };
 

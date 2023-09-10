@@ -7,6 +7,7 @@
   ];
   networking.hostName = "zephyrus";
 
+
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
@@ -25,10 +26,14 @@
     };
   };
 
+  networking.firewall.checkReversePath = "loose";
+  networking.wireguard.enable = true; 
   networking.networkmanager.enable = true;
+
 
   services = {
     openssh.enable = true;
+    mullvad-vpn.enable = true;
     xserver = {
       dpi = 120;
       upscaleDefaultCursor = true;
