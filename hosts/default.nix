@@ -47,6 +47,7 @@ in
       }
     ];
   };
+
   # virtualbox config
   virtualbox = lib.nixosSystem {
     inherit system;
