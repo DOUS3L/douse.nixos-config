@@ -11,6 +11,7 @@
     ../modules/zsh/home.nix
     ../modules/helix/home.nix
     ../modules/neovim/home.nix
+    ../modules/tmux/home.nix
   ];
 
   xdg = {
