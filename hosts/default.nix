@@ -23,7 +23,6 @@ in
     modules = [
       ./zephyrus
       ./configuration.nix
-      #sops-nix.nixosModules.sops
 
       home-manager.nixosModules.home-manager
       {
@@ -58,7 +57,6 @@ in
     modules = [
       ./virtualbox
       ./configuration.nix
-      #sops-nix.nixosModules.sops
 
       home-manager.nixosModules.home-manager
       {
