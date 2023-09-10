@@ -26,6 +26,7 @@ in
       ./configuration.nix
       ../profiles/aldouse
       ../profiles/oceanedge
+      ../profiles/bluewheels
 
       home-manager.nixosModules.home-manager
       {
@@ -42,12 +43,19 @@ in
             ++ [ (import ./home.nix) ]
             ++ [ (import ./zephyrus/home.nix) ]
           ;
-
         };
 
         home-manager.users.${oceanedge-user} = {
           imports =
             [ (import ../profiles/${oceanedge-user}/home.nix)]
+            ++ [ (import ./home.nix) ]
+            ++ [ (import ./zephyrus/home.nix) ]
+          ;
+        };
+
+        home-manager.users.${bluewheels-user} = {
+          imports =
+            [ (import ../profiles/${bluewheels-user}/home.nix)]
             ++ [ (import ./home.nix) ]
             ++ [ (import ./zephyrus/home.nix) ]
           ;
