@@ -7,4 +7,3 @@ creation_rules:
       - age:
         - *virtualbox
         - *zephyrus
- 

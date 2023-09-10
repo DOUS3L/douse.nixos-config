@@ -9,15 +9,15 @@
     secrets = {
       alivpn0 = {
         path = "${config.home.homeDirectory}/.secrets/alivpn0.ovpn";
-        sopsFile = ../../secrets/oceanedge.yaml;
+        sopsFile = ../../secrets/secrets_oceanedge.yaml;
       };
       gcpvpn0 = {
         path = "${config.home.homeDirectory}/.secrets/alivpn0.ovpn";
-        sopsFile = ../../secrets/oceanedge.yaml;
+        sopsFile = ../../secrets/secrets_oceanedge.yaml;
       };
       gcpvpn1 = {
         path = "${config.home.homeDirectory}/.secrets/alivpn0.ovpn";
-        sopsFile = ../../secrets/oceanedge.yaml;
+        sopsFile = ../../secrets/secrets_oceanedge.yaml;
       };
     };
   };
