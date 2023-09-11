@@ -61,6 +61,7 @@
       font-manager
       fzf
       gcc
+      gnumake
       killall
       nano
       pciutils

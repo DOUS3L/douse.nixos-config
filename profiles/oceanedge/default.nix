@@ -7,10 +7,21 @@
     home = "/home/${oceanedge-user}";
   };
 
-# config.users.users.${oceanedge-user}.home
   services.openvpn.servers = {
-    alivpn0 = { config = "config /home/${oceanedge-user}/.secrets/alivpn0.ovpn"; };
-    gcpvpn0 = { config = "config /home/${oceanedge-user}/.secrets/gcpvpn0.ovpn"; };
-    gcpvpn1 = { config = "config /home/${oceanedge-user}/.secrets/gcpvpn1.ovpn"; };
+    alivpn0 = {
+      config = "config /home/${oceanedge-user}/.secrets/alivpn0.ovpn";
+      autoStart = false;
+      updateResolvConf = true;
+    };
+    gcpvpn0 = {
+      config = "config /home/${oceanedge-user}/.secrets/gcpvpn0.ovpn";
+      autoStart = false;
+      updateResolvConf = true;
+    };
+    gcpvpn1 = {
+      config = "config /home/${oceanedge-user}/.secrets/gcpvpn1.ovpn";
+      autoStart = false;
+      updateResolvConf = true;
+    };
   };
 }

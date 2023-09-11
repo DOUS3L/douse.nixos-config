@@ -28,6 +28,7 @@
     secrets = {
       douse_ed25519_private_ssh_key = {
         path = "${config.home.homeDirectory}/.ssh/douse_ed25519";
+        mode = "0600";
       };
       douse_ed25519_public_ssh_key = {
         path = "${config.home.homeDirectory}/.ssh/douse_ed25519.pub";
@@ -59,7 +60,7 @@
       # apps
       appimage-run
       firefox
-      sublime4-dev
+      sublime4
       vivaldi
       vivaldi-ffmpeg-codecs
       libsForQt5.dolphin
