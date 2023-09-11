@@ -4,6 +4,7 @@
     alacritty = {
       enable = true;
       settings = {
+        dynamic_padding = true;
         cursor = {
           style = {
             shape = "Underline";
@@ -22,7 +23,8 @@
         };
         window = {
           opacity = 0.84;
-          padding.x = 3;
+          padding.x = 1;
+          padding.y = 0;
         };
       };
     };

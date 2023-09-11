@@ -59,8 +59,10 @@
       # apps
       appimage-run
       firefox
+      sublime4-dev
       vivaldi
       vivaldi-ffmpeg-codecs
+      libsForQt5.dolphin
 
       # file management
       okular
@@ -69,6 +71,8 @@
       unzip
       unrar
       zip
+      ntfs3g
+      exfat
 
       # misc
       flameshot

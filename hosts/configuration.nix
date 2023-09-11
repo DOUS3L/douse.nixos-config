@@ -1,6 +1,7 @@
 { user, pkgs, inputs, config, ... }:
 
 {
+  boot.supportedFilesystems = [ "ntfs" ];
   # users.users.${user} = {
   #   isNormalUser = true;
   #   extraGroups = [ "wheel" "networkmanager" ];
@@ -111,6 +112,7 @@
       pulse.enable = true;
       jack.enable = true;
     };
+    udisks2.enable = true;
   };
 
 
@@ -121,7 +123,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 2d";
+      options = "--delete-older-than 7d";
     };
     package = pkgs.nixVersions.unstable;
     registry.nixpkgs.flake = inputs.nixpkgs;
