@@ -17,7 +17,7 @@ in
   zephyrus = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs user unstable oceanedge-user bluewheels-user;
+      inherit inputs user unstable oceanedge-user bluewheels-user nixpkgs-unstable;
     };
 
 

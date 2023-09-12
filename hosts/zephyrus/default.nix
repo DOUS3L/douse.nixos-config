@@ -1,9 +1,13 @@
-{ pkgs, unstable, ... }:
+{ pkgs, unstable, nixpkgs-unstable, ... }:
 
 {
+
+  disabledModules = [ "services/hardware/tlp.nix" ];
+
   imports = [
     ./hardware-configuration.nix
     ../../modules/i3/default.nix
+    "${nixpkgs-unstable}/nixos/modules/services/hardware/tlp.nix"
   ];
   networking.hostName = "zephyrus";
 
@@ -47,7 +51,7 @@
     systemPackages = [
       pkgs.acpi
       pkgs.powertop
-      pkgs.asusctl
+      # pkgs.asusctl
       pkgs.cpufrequtils
       pkgs.linuxKernel.packages.linux_6_4.cpupower
       pkgs.arandr
@@ -60,11 +64,12 @@
   # powerManagement.powertop.enable = true;
 
   services = {
+    ## battery / performance management related
     acpid.enable = true;
-    asusd = {
-      enable = true;
-      enableUserService = true;
-    };
+    # asusd = {
+    #   enable = true;
+    #   enableUserService = true;
+    # };
     auto-cpufreq = {
       enable = true;
       settings = {
@@ -73,16 +78,44 @@
           turbo = "never";
         };
         battery = {
-          governor = "schedutil";
+          governor = "performance";
           turbo = "never";
-          scaling_max_freq = "2200000";
+          # scaling_max_freq = "2200000";
         };
+      };
+    };
+    # power-profiles-daemon.enable = true;
+    tlp = {
+      enable = true;
+      settings = {
+        # battery
+        START_CHARGE_THRESH_BAT0 = 0;
+        STOP_CHARGE_THRESH_BAT0 = 80;
+
+        # graphics
+        RADEON_DPM_PERF_LEVEL_ON_BAT = "low";
+        RADEON_DPM_STATE_ON_BAT = "battery";
+        
+        # platform
+        PLATFORM_PROFILE_ON_BAT = "quiet";
+
+        # processor
+        CPU_BOOST_ON_AC = 0;
+        CPU_BOOST_ON_BAT = 0;
+        CPU_SCALING_MIN_FREQ_ON_AC=400000;
+        CPU_SCALING_MAX_FREQ_ON_AC=3300000;
+        CPU_SCALING_MIN_FREQ_ON_BAT=400000;
+        CPU_SCALING_MAX_FREQ_ON_BAT=1800000;
+
+        # runtime and ASPM
+        PCIE_ASPM_ON_AC = "performance";
+        PCIE_ASPM_ON_BAT = "powersupersave";
+
       };
     };
 
     openssh.enable = true;
     mullvad-vpn.enable = true;
-    #power-profiles-daemon.enable = true;
     supergfxd.enable = true;
     xserver = {
       dpi = 120;
