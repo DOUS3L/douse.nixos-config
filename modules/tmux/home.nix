@@ -1,5 +1,15 @@
 { unstable, pkgs, ... }:
 {
+  home = {
+    file = {
+      "tmux_themes" = {
+        enable = true;
+        source = ./themes;
+        recursive = true;
+        target = ".config/tmux/themes";
+      };
+    };
+  };
 
   programs = {
     tmux = {
@@ -9,7 +19,7 @@
       prefix = "C-a";
       plugins = with pkgs; [
         tmuxPlugins.extrakto
-        tmuxPlugins.nord
+        # tmuxPlugins.nord
       ];
       extraConfig = ''
         # set terminal 256 color 
@@ -27,8 +37,9 @@
         bind -n M-l select-pane -R
         bind -n M-k select-pane -U
         bind -n M-j select-pane -D
-
-
+        
+        source ~/.config/tmux/themes/srcery.conf
+        source ~/.config/tmux/themes/srcery_no_patched.conf
       '';
     };
   };

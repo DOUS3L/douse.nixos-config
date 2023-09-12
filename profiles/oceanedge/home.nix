@@ -7,6 +7,7 @@
     packages = [
       unstable.google-cloud-sdk
       unstable.slack
+      unstable.devbox
 
     ];
   };
