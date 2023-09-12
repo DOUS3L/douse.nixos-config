@@ -5,11 +5,24 @@
     homeDirectory = "/home/${oceanedge-user}";
 
     packages = [
-      unstable.google-cloud-sdk
       unstable.slack
       unstable.devbox
-
+      unstable.k9s
+      pkgs.gnupg
+      unstable.kubectl
+      (unstable.google-cloud-sdk.withExtraComponents [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     ];
+  };
+
+  programs = {
+    direnv = {
+      enable = true;
+    };
+    zsh = {
+      shellAliases = {
+        startvpns = "sudo systemctl start openvpn-alivpn0; sudo systemctl start openvpn-gcpvpn0.service; sudo systemctl start openvpn-gcpvpn1.service";
+      };
+    };
   };
 
   sops = {

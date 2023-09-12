@@ -12,6 +12,9 @@
           };
           vi_mode_style.shape = "Underline";
         };
+        colors = {
+          transparent_background_colors = true;
+        };
         env = {
           TERM = "xterm-256color";
         };

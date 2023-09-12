@@ -8,6 +8,9 @@
       #      syntaxHighlighting.enable = true;
       enableCompletion = true;
       history.size = 100000;
+      shellAliases = {
+        sctl = "systemctl";
+      };
 
       initExtra = ''
         # Navigation with ranger-fm

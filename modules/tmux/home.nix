@@ -23,7 +23,8 @@
       ];
       extraConfig = ''
         # set terminal 256 color 
-        set -g default-terminal "screen-256color"
+        set -g default-terminal "xterm-256color"
+        set -ga terminal-overrides ",xterm-256color:Tc"
         set -sg terminal-overrides ",*:RGB"
 
         # split panes using | and -
