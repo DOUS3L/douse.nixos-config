@@ -10,11 +10,14 @@ in
       lazygit
       nodejs
 
+      # gui neovim
+      neovide
+
     ];
+
     file = {
       ".config/astronvim" = {
         enable = true;
-        # TODO: separate path prefix later into its own variable
         source = link ./astronvim;
         recursive = true;
         target = ".config/astronvim";

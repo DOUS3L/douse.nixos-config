@@ -1,4 +1,4 @@
-{ bluewheels-user, ... }:
+{ config, unstable, pkgs, bluewheels-user, ... }:
 {
   home = {
     username = "${bluewheels-user}";
@@ -6,7 +6,22 @@
 
     packages = [
       unstable.google-cloud-sdk
+      unstable.slack
+
+      # for development
+      pkgs.python310
+      pkgs.python310Packages.pip
+      pkgs.poetry
     ];
+  };
+
+  programs = {
+    zsh = {
+      shellAliases = {
+        devlvpn = "sudo systemctl stop openvpn-gcpvpn4; sudo systemctl start openvpn-gcpvpn3.service";
+        prodvpn = "sudo systemctl stop openvpn-gcpvpn3; sudo systemctl start openvpn-gcpvpn4.service";
+      };
+    };
   };
 
   sops = {

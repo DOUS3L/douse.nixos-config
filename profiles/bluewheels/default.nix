@@ -11,12 +11,10 @@
     gcpvpn3 = {
       config = "config /home/${bluewheels-user}/.secrets/gcpvpn3.ovpn";
       autoStart = false;
-      updateResolvConf = true;
     };
     gcpvpn4 = {
       config = "config /home/${bluewheels-user}/.secrets/gcpvpn4.ovpn";
       autoStart = false;
-      updateResolvConf = true;
     };
   };
 }

@@ -61,8 +61,11 @@
       appimage-run
       firefox
       sublime4
-      vivaldi
-      vivaldi-ffmpeg-codecs
+      (unstable.vivaldi.override {
+        proprietaryCodecs = true;
+        enableWidevine = false;
+      })
+      unstable.vivaldi-ffmpeg-codecs
       libsForQt5.dolphin
 
       # file management

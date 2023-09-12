@@ -16,13 +16,13 @@
     };
   };
 
+  programs = {
+    zsh = {
+      shellAliases = {
+        killvpn = "for s in `systemctl | grep openvpn | cut -d '.' -f 1`; do  echo stopping $s && sudo systemctl stop $s; done";
+      };
+    };
+  };
 
 
-  #programs = {
-  #  zsh = {
-  #    shellAliases = {
-  #      nrb = "cd ~/repos/douse.nixos-config && sudo nixos-rebuild switch --flake .#virtualbox";
-  #    };
-  #  };
-  #};
 }

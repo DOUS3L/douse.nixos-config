@@ -48,34 +48,41 @@
       pkgs.acpi
       pkgs.powertop
       pkgs.asusctl
+      pkgs.cpufrequtils
+      pkgs.linuxKernel.packages.linux_6_4.cpupower
+      pkgs.arandr
+      pkgs.brightnessctl
+      pkgs.powerstat
     ];
   };
 
 
+  # powerManagement.powertop.enable = true;
 
   services = {
     acpid.enable = true;
     asusd = {
       enable = true;
       enableUserService = true;
-      # asusdConfig = ''
-      #   (
-      #     bat_charge_limit: 80,
-      #     panel_od: false,
-      #     disable_nvidia_powerd_on_battery: true,
-      #     ac_command: "",
-      #     bat_command: "",
-      #   )
-      # '';
-      # profileConfig = ''
-      #   (
-      #     active_profile: Quiet,
-      #   )
-      # '';
     };
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        charger = {
+          governor = "performance";
+          turbo = "never";
+        };
+        battery = {
+          governor = "schedutil";
+          turbo = "never";
+          scaling_max_freq = "2200000";
+        };
+      };
+    };
+
     openssh.enable = true;
     mullvad-vpn.enable = true;
-    power-profiles-daemon.enable = true;
+    #power-profiles-daemon.enable = true;
     supergfxd.enable = true;
     xserver = {
       dpi = 120;
@@ -90,5 +97,22 @@
   nixpkgs.config.permittedInsecurePackages = [
     "openssl-1.1.1v"
   ];
+
+  virtualisation = {
+    podman = {
+      enable = true;
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
+  # systemd.services.kill-running-openvpn = {
+  #   script = ''
+  #     for s in `systemctl | grep openvpn | cut -d '.' -f 1`; do echo stopping $s && systemctl stop $s; done
+  #   '';
+  #   wantedBy = [ "multi-user.target" ];
+  # };
 
 }
