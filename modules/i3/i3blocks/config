@@ -21,17 +21,20 @@ interval=30
 label=disk 
 interval=30
 
-[ssid]
-INTERFACE=wlp5s0
-interval=60
 
 # [volume-pipewire]
 # interval=once
 # signal=1
 
-[battery]
-label=battery 
+[batterybar]
+label=bat:
 interval=30
+markup=pango
+min_width=bat: ■■■■■
+
+#[battery]
+#label=battery 
+#interval=30
 
 [time]
 command=date '+%x / %A / %H:%M  '

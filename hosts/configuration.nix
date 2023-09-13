@@ -64,6 +64,7 @@
       gnumake
       gnupg
       killall
+      iw
       nano
       pciutils
       usbutils
@@ -73,8 +74,6 @@
       wget
       xclip
       xorg.xdpyinfo
-      # TODO: separate later
-      neovim
       git
       nil
       nixpkgs-fmt
