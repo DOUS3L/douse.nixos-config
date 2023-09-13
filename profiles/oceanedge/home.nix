@@ -14,6 +14,7 @@
       unstable.terragrunt
       unstable.postgresql
       unstable.mysql
+      unstable.helm
     ];
   };
 

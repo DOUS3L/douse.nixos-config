@@ -15,6 +15,8 @@
         blur-background = false;
       };
     };
+    shadow = true;
+    shadowOffsets = [ (-7) (-7) ];
     settings = {
       blur = {
         method = "dual_kawase";

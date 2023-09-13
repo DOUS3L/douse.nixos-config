@@ -2,9 +2,9 @@ command=~/.config/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-[i3-focusedwindow]
-label=window: 
-interval=persist
+#[i3-focusedwindow]
+#label=window: 
+#interval=persist
 
 [cpu_usage]
 label=cpu 

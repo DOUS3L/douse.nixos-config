@@ -5,29 +5,33 @@
 #
 # A battery indicator blocklet script for i3blocks
 
-from subprocess import check_output
 import os
 import re
+from subprocess import check_output
 
 config = dict(os.environ)
-status = check_output(['acpi'], universal_newlines=True)
+status = check_output(["acpi"], universal_newlines=True)
 
 if not status:
     # stands for no battery found
     color = config.get("color_10", "red")
-    fulltext = "<span color='{}'><span font='FontAwesome'>\uf00d \uf240</span></span>".format(color)
+    fulltext = (
+        "<span color='{}'><span font='FontAwesome'>\uf00d \uf240</span></span>".format(
+            color
+        )
+    )
     percentleft = 100
 else:
     # if there is more than one battery in one laptop, the percentage left is
     # available for each battery separately, although state and remaining
     # time for overall block is shown in the status of the first battery
     batteries = status.split("\n")
-    state_batteries=[]
-    commasplitstatus_batteries=[]
-    percentleft_batteries=[]
+    state_batteries = []
+    commasplitstatus_batteries = []
+    percentleft_batteries = []
     time = ""
     for battery in batteries:
-        if battery!='':
+        if battery != "":
             state_batteries.append(battery.split(": ")[1].split(", ")[0])
             commasplitstatus = battery.split(", ")
             if not time:
@@ -41,19 +45,21 @@ else:
                     timeleft = ""
 
             p = int(commasplitstatus[1].rstrip("%\n"))
-            if p>0:
+            if p > 0:
                 percentleft_batteries.append(p)
             commasplitstatus_batteries.append(commasplitstatus)
     state = state_batteries[0]
     commasplitstatus = commasplitstatus_batteries[0]
     if percentleft_batteries:
-        percentleft = int(sum(percentleft_batteries)/len(percentleft_batteries))
+        percentleft = int(sum(percentleft_batteries) / len(percentleft_batteries))
     else:
         percentleft = 0
 
     # stands for charging
     color = config.get("color_charging", "yellow")
-    FA_LIGHTNING = "<span color='{}'><span font='FontAwesome'>\uf0e7</span></span>".format(color)
+    FA_LIGHTNING = (
+        "<span color='{}'><span font='FontAwesome'>\uf0e7</span></span>".format(color)
+    )
 
     # stands for plugged in
     FA_PLUG = "<span font='FontAwesome'>\uf1e6</span>"
@@ -64,9 +70,20 @@ else:
     # stands for unknown status of battery
     FA_QUESTION = "<span font='FontAwesome'>\uf128</span>"
 
-
     if state == "Discharging":
+        if percentleft < 25:
+            FA_BATTERY = ""
+        elif percentleft < 50:
+            FA_BATTERY = ""
+        elif percentleft < 75:
+            FA_BATTERY = ""
+        elif percentleft < 99:
+            FA_BATTERY = ""
+        else:
+            FA_BATTERY = ""
+
         fulltext = FA_BATTERY + " "
+
     elif state == "Full":
         fulltext = FA_PLUG + " "
         timeleft = ""
@@ -96,9 +113,9 @@ else:
             return config.get("color_80", "#FFFF66")
         return config.get("color_full", "#FFFFFF")
 
-    form =  '<span color="{}">{}%</span>'
-    fulltext += form.format(color(percentleft), percentleft)
-    fulltext += timeleft
+    form = '<span color="{}">{}%</span>'
+    fulltext += " " + form.format(color(percentleft), percentleft)
+    # fulltext += timeleft
 
 print(fulltext)
 print(fulltext)

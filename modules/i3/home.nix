@@ -1,6 +1,7 @@
 { config, pkgs, unstable, ... }:
 let
   modifier = "Mod4";
+  modeSystem = "s: suspend, l: logout, r: reboot, p: poweroff";
 in
 {
   # theming with pywal
@@ -11,7 +12,7 @@ in
   home = {
     packages = with pkgs; [
       i3wsr
-      pkgs.python311 # needed for i3blocks
+      # pkgs.python311 # needed for i3blocks
     ];
     file = {
       "i3blocks" = {
@@ -56,6 +57,12 @@ in
           outer = 0;
         };
 
+        keycodebindings = {
+          # volumes
+          "123" = "exec ${pkgs.pamixer}/bin/pamixer -i 5 && ${pkgs.dunst}/bin/dunstify VOLUME -h int:value:$(pamixer --get-volume) -i audio-volume-high";
+          "122" = "exec ${pkgs.pamixer}/bin/pamixer -d 5 && ${pkgs.dunst}/bin/dunstify VOLUME -h int:value:$(pamixer --get-volume) -i audio-volume-high";
+        };
+
         keybindings = {
           # apps keybind
           ## alacritty terminal
@@ -63,16 +70,14 @@ in
           ## flameshot 
           "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
           ## rofi
-          "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show drun -theme ~/.config/rofi/launcher.rasi";
+          "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show drun -config ~/.config/rofi/launcher2.rasi";
+          "${modifier}+Tab" = "exec ${pkgs.rofi}/bin/rofi -show window -config ~/.config/rofi/launcher2.rasi";
           ## pavucontrol
           "${modifier}+v" = ''[instance="pavucontrol"] scratchpad show, move position center'';
           ## floating alacritty
           "${modifier}+t" = ''[instance="floatingterm"] scratchpad show, move position center'';
 
 
-          # volumes
-          #"XF86AudioRaiseVolume" = "${pkgs.pamixer}/bin/pamixer -i 5";
-          #"XF86AudioLowerVolume" = "${pkgs.pamixer}/bin/pamixer -d 5";
 
           # change focused window
           "${modifier}+h" = "focus left";
@@ -110,7 +115,7 @@ in
 
           # modes
           "${modifier}+r" = "mode resize";
-          "${modifier}+Shift+e" = ''mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff"'';
+          "${modifier}+Shift+e" = ''mode "${modeSystem}"'';
 
           # workspaces
           # switch to workspace
@@ -153,7 +158,7 @@ in
           "Escape" = "mode default";
         };
 
-        modes."(S)uspend, (L)ogout, (R)eboot, (P)oweroff" = {
+        modes."${modeSystem}" = {
           "r" = "exec --no-startup-id systemctl reboot";
           "s" = "exec --no-startup-id systemctl suspend; mode default";
           "l" = "exit";

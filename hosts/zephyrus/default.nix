@@ -78,6 +78,9 @@
   };
 
   services = {
+    autorandr = {
+      enable = true;
+    };
     ## battery / performance management related
     acpid.enable = true;
     # asusd = {
