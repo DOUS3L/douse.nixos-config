@@ -21,9 +21,13 @@ interval=30
 label=disk 
 interval=30
 
-[volume-pipewire]
-interval=once
-signal=1
+[ssid]
+INTERFACE=wlp5s0
+interval=60
+
+# [volume-pipewire]
+# interval=once
+# signal=1
 
 [battery]
 label=battery 

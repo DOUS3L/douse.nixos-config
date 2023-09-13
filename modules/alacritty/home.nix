@@ -26,7 +26,7 @@
         };
         window = {
           opacity = 0.84;
-          padding.x = 1;
+          padding.x = 2;
           padding.y = 0;
         };
       };

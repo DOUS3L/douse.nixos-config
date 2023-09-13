@@ -1,17 +1,6 @@
 { config, pkgs, unstable, ... }:
 let
   modifier = "Mod4";
-  workspace = {
-    terminal = "terminal";
-    code = "code";
-    browser = "browser";
-    spotify = "spotify";
-    discord = "discord";
-    bitwarden = "bitwarden";
-    signal = "signal";
-    extra-1 = "1";
-    extra-2 = "2";
-  };
 in
 {
   # theming with pywal

@@ -59,6 +59,7 @@
 
       # apps
       appimage-run
+      bitwarden
       firefox
       sublime4
       (unstable.vivaldi.override {
@@ -77,9 +78,6 @@
       zip
       ntfs3g
       exfat
-
-      # misc
-      flameshot
 
     ];
 
@@ -103,4 +101,10 @@
     };
   };
 
+  services = {
+    flameshot = {
+      enable = true;
+      package = unstable.flameshot;
+    };
+  };
 }

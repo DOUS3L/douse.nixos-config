@@ -62,6 +62,7 @@
       fzf
       gcc
       gnumake
+      gnupg
       killall
       nano
       pciutils
@@ -97,10 +98,10 @@
     neovim = {
       enable = true;
     };
-    nm-applet = {
-      enable = true;
-      indicator = false;
-    };
+    # nm-applet = {
+    #   enable = true;
+    #   indicator = false;
+    # };
     zsh.enable = true;
   };
 

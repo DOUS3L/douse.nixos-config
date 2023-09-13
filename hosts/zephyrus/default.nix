@@ -1,15 +1,12 @@
 { pkgs, unstable, nixpkgs-unstable, ... }:
 
 {
-
-  disabledModules = [ "services/hardware/tlp.nix" ];
-
   imports = [
     ./hardware-configuration.nix
     ../../modules/i3/default.nix
     "${nixpkgs-unstable}/nixos/modules/services/hardware/tlp.nix"
   ];
-  networking.hostName = "zephyrus";
+  disabledModules = [ "services/hardware/tlp.nix" ];
 
 
   boot = {
@@ -30,6 +27,17 @@
     };
   };
 
+  # bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
+  };
+  services.blueman.enable = true;
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -42,7 +50,7 @@
     jack.enable = true;
   };
 
-
+  networking.hostName = "zephyrus";
   networking.firewall.checkReversePath = "loose";
   networking.wireguard.enable = true;
   networking.networkmanager.enable = true;
@@ -61,7 +69,6 @@
   };
 
 
-  # powerManagement.powertop.enable = true;
   programs = {
     noisetorch = {
       enable = true;

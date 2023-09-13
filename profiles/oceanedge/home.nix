@@ -8,9 +8,12 @@
       unstable.slack
       unstable.devbox
       unstable.k9s
-      pkgs.gnupg
       unstable.kubectl
       (unstable.google-cloud-sdk.withExtraComponents [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+      unstable.terraform
+      unstable.terragrunt
+      unstable.postgresql
+      unstable.mysql
     ];
   };
 
