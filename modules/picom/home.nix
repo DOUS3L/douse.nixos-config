@@ -17,7 +17,7 @@
     };
     settings = {
       blur = {
-        method = "gaussian";
+        method = "dual_kawase";
         deviation = 20;
         size = 20;
         strength = 5;

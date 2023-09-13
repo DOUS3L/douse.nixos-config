@@ -11,6 +11,7 @@ in
   home = {
     packages = with pkgs; [
       i3wsr
+      pkgs.python311 # needed for i3blocks
     ];
     file = {
       "i3blocks" = {
@@ -67,6 +68,11 @@ in
           "${modifier}+v" = ''[instance="pavucontrol"] scratchpad show, move position center'';
           ## floating alacritty
           "${modifier}+t" = ''[instance="floatingterm"] scratchpad show, move position center'';
+
+
+          # volumes
+          #"XF86AudioRaiseVolume" = "${pkgs.pamixer}/bin/pamixer -i 5";
+          #"XF86AudioLowerVolume" = "${pkgs.pamixer}/bin/pamixer -d 5";
 
           # change focused window
           "${modifier}+h" = "focus left";

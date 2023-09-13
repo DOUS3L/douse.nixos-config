@@ -65,6 +65,7 @@
       pkgs.arandr
       pkgs.brightnessctl
       pkgs.powerstat
+      pkgs.pamixer
     ];
   };
 

@@ -68,6 +68,11 @@
       })
       unstable.vivaldi-ffmpeg-codecs
       libsForQt5.dolphin
+      (pkgs.discord.override {
+        withOpenASAR = true;
+        # withVencord = true;
+      })
+
 
       # file management
       okular
@@ -105,6 +110,12 @@
     flameshot = {
       enable = true;
       package = unstable.flameshot;
+      settings = {
+        General = {
+          disabledTrayIcon = true;
+          showStartupLaunchMessage = false;
+        };
+      };
     };
   };
 }
