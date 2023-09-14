@@ -65,6 +65,7 @@
       gnupg
       killall
       iw
+      wirelesstools
       nano
       pciutils
       usbutils

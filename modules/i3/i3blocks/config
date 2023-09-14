@@ -6,6 +6,10 @@ markup=none
 #label=window: 
 #interval=persist
 
+[ssid]
+INTERFACE=wlp5s0
+
+interval=60
 [cpu_usage]
 label=cpu 
 interval=10
