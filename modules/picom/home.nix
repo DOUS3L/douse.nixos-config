@@ -15,8 +15,8 @@
         blur-background = false;
       };
     };
-    shadow = true;
-    shadowOffsets = [ (-7) (-7) ];
+    # shadow = true;
+    # shadowOffsets = [ (-3) (-3) ];
     settings = {
       blur = {
         method = "dual_kawase";
@@ -25,6 +25,7 @@
         strength = 5;
       };
       use-damage = true;
+      # shadow-radius = 7;
     };
   };
 }

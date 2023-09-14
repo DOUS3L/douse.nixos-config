@@ -5,13 +5,18 @@
     homeDirectory = "/home/${bluewheels-user}";
 
     packages = [
-      unstable.google-cloud-sdk
       unstable.slack
 
       # for development
+      (unstable.google-cloud-sdk.withExtraComponents [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+
       pkgs.python310
       pkgs.python310Packages.pip
       pkgs.poetry
+
+      unstable.kubectl
+      unstable.kubernetes-helm
+      unstable.k9s
     ];
   };
 

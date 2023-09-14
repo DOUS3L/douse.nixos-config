@@ -6,15 +6,21 @@
 
     packages = [
       unstable.slack
+      unstable.ripcord
+
       unstable.devbox
+
+      (unstable.google-cloud-sdk.withExtraComponents [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
       unstable.k9s
       unstable.kubectl
-      (unstable.google-cloud-sdk.withExtraComponents [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+      unstable.kubernetes-helm
+
       unstable.terraform
       unstable.terragrunt
+
       unstable.postgresql
       unstable.mysql
-      unstable.helm
+      unstable.usql
     ];
   };
 
