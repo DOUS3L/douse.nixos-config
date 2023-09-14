@@ -5,8 +5,12 @@
     homeDirectory = "/home/${oceanedge-user}";
 
     packages = [
+      (unstable.vivaldi.override {
+        proprietaryCodecs = true;
+        enableWidevine = false;
+      })
+      unstable.vivaldi-ffmpeg-codecs
       unstable.slack
-      unstable.ripcord
 
       unstable.devbox
 
@@ -17,6 +21,8 @@
 
       unstable.terraform
       unstable.terragrunt
+
+      unstable.insomnia
 
       unstable.postgresql
       unstable.mysql
@@ -60,5 +66,19 @@
       };
     };
   };
+
+  # additional i3 configuration
+  xsession.windowManager.i3.config.startup = [
+    {
+      command = "${unstable.slack}/bin/slack";
+      always = false;
+      notification = false;
+    }
+    {
+      command = "${unstable.vivaldi}/bin/vivaldi";
+      always = false;
+      notification = false;
+    }
+  ];
 
 }

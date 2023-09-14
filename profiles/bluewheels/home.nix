@@ -5,6 +5,11 @@
     homeDirectory = "/home/${bluewheels-user}";
 
     packages = [
+      (unstable.vivaldi.override {
+        proprietaryCodecs = true;
+        enableWidevine = false;
+      })
+      unstable.vivaldi-ffmpeg-codecs
       unstable.slack
 
       # for development
@@ -13,6 +18,8 @@
       pkgs.python310
       pkgs.python310Packages.pip
       pkgs.poetry
+
+      unstable.insomnia
 
       unstable.kubectl
       unstable.kubernetes-helm
@@ -59,4 +66,18 @@
     };
   };
 
+
+  # additional i3 configuration
+  xsession.windowManager.i3.config.startup = [
+    {
+      command = "${unstable.slack}/bin/slack";
+      always = false;
+      notification = false;
+    }
+    {
+      command = "${unstable.vivaldi}/bin/vivaldi";
+      always = false;
+      notification = false;
+    }
+  ];
 }

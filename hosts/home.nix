@@ -62,16 +62,7 @@
       bitwarden
       firefox
       sublime4
-      (unstable.vivaldi.override {
-        proprietaryCodecs = true;
-        enableWidevine = false;
-      })
-      unstable.vivaldi-ffmpeg-codecs
       libsForQt5.dolphin
-      (pkgs.discord.override {
-        withOpenASAR = true;
-        # withVencord = true;
-      })
 
 
       # file management

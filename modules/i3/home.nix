@@ -2,6 +2,17 @@
 let
   modifier = "Mod4";
   modeSystem = "s: suspend, l: logout, r: reboot, p: poweroff";
+
+  ws1 = "1:「一」";
+  ws2 = "2:「二」";
+  ws3 = "3:「三」";
+  ws4 = "4:「四」";
+  ws5 = "5:「五」";
+  ws6 = "6:「六」";
+  ws7 = "7:「七」";
+  ws8 = "8:「八」";
+  ws9 = "9:「九」";
+  ws10 = "10:「十」";
 in
 {
   # theming with pywal
@@ -30,6 +41,11 @@ in
       enable = true;
       config = {
         inherit modifier;
+
+        assigns = {
+          "${ws9}" = [{ class = "Slack"; } { class = "discord"; }];
+          "${ws10}" = [{ class = "firefox"; } { title = "^Mozilla Firefox$"; } { class = "Vivaldi-stable"; }];
+        };
 
         bars = [
           {
@@ -76,8 +92,9 @@ in
           "${modifier}+v" = ''[instance="pavucontrol"] scratchpad show, move position center'';
           ## floating alacritty
           "${modifier}+t" = ''[instance="floatingterm"] scratchpad show, move position center'';
-
-
+          ## brightness control
+          "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%-";
+          "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%+";
 
           # change focused window
           "${modifier}+h" = "focus left";
@@ -202,6 +219,11 @@ in
             always = true;
             notification = false;
           }
+          {
+            command = "${pkgs.autorandr}/bin/autorandr -c && ${pkgs.pywal}/bin/wal -i ~/wallpapers";
+            always = false;
+            notification = false;
+          }
         ];
 
         window = {
@@ -224,16 +246,16 @@ in
       # mostly settings for pywal
       extraConfig = ''
         # workspace numbers
-        set $ws1 1:「一」
-        set $ws2 2:「二」
-        set $ws3 3:「三」
-        set $ws4 4:「四」
-        set $ws5 5:「五」
-        set $ws6 6:「六」
-        set $ws7 7:「七」
-        set $ws8 8:「八」
-        set $ws9 9:「九」
-        set $ws10 10:「十」
+        set $ws1 ${ws1} 
+        set $ws2 ${ws2} 
+        set $ws3 ${ws3} 
+        set $ws4 ${ws4} 
+        set $ws5 ${ws5} 
+        set $ws6 ${ws6} 
+        set $ws7 ${ws7} 
+        set $ws8 ${ws8} 
+        set $ws9 ${ws9} 
+        set $ws10 ${ws10} 
 
         set_from_resource $color0 i3wm.color0 #f0f0f0
         set_from_resource $color1 i3wm.color1 #f0f0f0
