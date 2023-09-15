@@ -50,6 +50,8 @@
     packages = with pkgs; [
       # terminal
       ranger
+      unstable.lf
+      unstable.xplr
 
       # video/audio
       feh

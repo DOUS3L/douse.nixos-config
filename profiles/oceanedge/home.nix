@@ -13,6 +13,7 @@
       unstable.slack
 
       unstable.devbox
+      unstable.pre-commit
 
       (unstable.google-cloud-sdk.withExtraComponents [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
       unstable.k9s
