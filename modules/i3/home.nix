@@ -43,8 +43,8 @@ in
         inherit modifier;
 
         assigns = {
-          "${ws9}" = [{ class = "Slack"; } { class = "discord"; }];
-          "${ws10}" = [{ class = "firefox"; } { title = "^Mozilla Firefox$"; } { class = "Vivaldi-stable"; }];
+          "$ws9" = [{ class = "Slack"; } { class = "discord"; }];
+          "$ws10" = [{ class = "firefox"; } { title = "^Mozilla Firefox$"; } { class = "Vivaldi-stable"; }];
         };
 
         bars = [

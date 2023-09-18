@@ -19,6 +19,7 @@
   programs = {
     zsh = {
       shellAliases = {
+        rescanwifi = "nmcli device wifi rescan && nmcli device wifi list";
         killvpn = "for s in `systemctl | grep openvpn | cut -d '.' -f 1`; do  echo stopping $s && sudo systemctl stop $s; done";
       };
     };

@@ -11,6 +11,7 @@
       })
       unstable.vivaldi-ffmpeg-codecs
       unstable.slack
+      unstable.gh
 
       unstable.devbox
       unstable.pre-commit

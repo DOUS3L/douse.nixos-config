@@ -149,7 +149,7 @@
       settings = {
         # battery
         START_CHARGE_THRESH_BAT0 = 0;
-        STOP_CHARGE_THRESH_BAT0 = 80;
+        STOP_CHARGE_THRESH_BAT0 = 60;
 
         # graphics
         RADEON_DPM_PERF_LEVEL_ON_BAT = "low";
