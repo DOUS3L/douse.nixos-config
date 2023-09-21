@@ -24,10 +24,14 @@
       unstable.kubectl
       unstable.kubernetes-helm
       unstable.k9s
+      unstable.fluxcd
     ];
   };
 
   programs = {
+    direnv = {
+      enable = true;
+    };
     zsh = {
       shellAliases = {
         devlvpn = "sudo systemctl stop openvpn-gcpvpn4; sudo systemctl start openvpn-gcpvpn3.service";
@@ -61,6 +65,10 @@
       };
       id_rsa_pub = {
         path = "${config.home.homeDirectory}/.ssh/id_rsa.pub";
+        sopsFile = ../../secrets/secrets_bluewheels.yaml;
+      };
+      k8s_dev_sops_agekey = {
+        path = "${config.home.homeDirectory}/.secrets/dev.agekey";
         sopsFile = ../../secrets/secrets_bluewheels.yaml;
       };
     };

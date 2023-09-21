@@ -10,6 +10,7 @@
       (unstable.discord.override {
         withOpenASAR = true;
       })
+      unstable.scrcpy
     ];
   };
 

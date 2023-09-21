@@ -65,6 +65,7 @@
       firefox
       sublime4
       libsForQt5.dolphin
+      unstable.logseq
 
 
       # file management

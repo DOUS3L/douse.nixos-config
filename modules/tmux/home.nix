@@ -27,6 +27,8 @@
         set -ga terminal-overrides ",xterm-256color:Tc"
         set -sg terminal-overrides ",*:RGB"
 
+        set-option -sg escape-time 0
+
         # split panes using | and -
         bind | split-window -h
         bind - split-window -v
