@@ -12,8 +12,8 @@ in
       };
       ".config/input-remapper/presets/ROYUAN OLV75/default.json" = {
         enable = true;
-        source = link "./presets/ROYUAN OLV75/default.json";
-        target = ".config/input-remapper/ROYUAN OLV75/default.json";
+        source = link "./presets/ROYUAN-OLV75/default.json";
+        target = ".config/input-remapper/presets/ROYUAN OLV75/default.json";
       };
     };
   };
