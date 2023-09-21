@@ -58,6 +58,10 @@
         path = "${config.home.homeDirectory}/.secrets/gcpvpn4cred";
         sopsFile = ../../secrets/secrets_bluewheels.yaml;
       };
+      k8s_dev_sops_agekey = {
+        path = "${config.home.homeDirectory}/.secrets/dev.agekey";
+        sopsFile = ../../secrets/secrets_bluewheels.yaml;
+      };
       id_rsa = {
         path = "${config.home.homeDirectory}/.ssh/id_rsa";
         sopsFile = ../../secrets/secrets_bluewheels.yaml;
@@ -65,10 +69,6 @@
       };
       id_rsa_pub = {
         path = "${config.home.homeDirectory}/.ssh/id_rsa.pub";
-        sopsFile = ../../secrets/secrets_bluewheels.yaml;
-      };
-      k8s_dev_sops_agekey = {
-        path = "${config.home.homeDirectory}/.secrets/dev.agekey";
         sopsFile = ../../secrets/secrets_bluewheels.yaml;
       };
     };
