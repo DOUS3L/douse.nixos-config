@@ -1,4 +1,4 @@
-{ ... }:
+{ unstable, ... }:
 {
   imports = [
     ../../modules/i3/home.nix
@@ -14,9 +14,6 @@
         };
       };
     };
-  };
-
-  programs = {
     zsh = {
       shellAliases = {
         rescanwifi = "nmcli device wifi rescan && nmcli device wifi list";
@@ -24,4 +21,13 @@
       };
     };
   };
+
+  # additional i3 configuration
+  xsession.windowManager.i3.config.startup = [
+    {
+      command = "${unstable.input-remapper}/bin/input-remapper-control --command autoload";
+      always = false;
+      notification = false;
+    }
+  ];
 }

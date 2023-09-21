@@ -189,6 +189,12 @@
       #   { x = 2560; y = 1600; }
       # ];
     };
+
+
+    input-remapper = {
+      enable = true;
+      package = unstable.input-remapper;
+    };
   };
 
   nixpkgs.config.permittedInsecurePackages = [
