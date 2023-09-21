@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../../modules/i3/default.nix
     "${nixpkgs-unstable}/nixos/modules/services/hardware/tlp.nix"
+    ../../modules/input-remapper/default.nix
   ];
   disabledModules = [ "services/hardware/tlp.nix" ];
 
@@ -191,10 +192,6 @@
     };
 
 
-    input-remapper = {
-      enable = true;
-      package = unstable.input-remapper;
-    };
   };
 
   nixpkgs.config.permittedInsecurePackages = [

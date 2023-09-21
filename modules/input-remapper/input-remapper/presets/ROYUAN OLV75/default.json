@@ -1,0 +1,52 @@
+{
+    "mapping": {
+        "1,224,1": [
+            "KEY_F1",
+            "keyboard"
+        ],
+        "1,225,1": [
+            "KEY_F2",
+            "keyboard"
+        ],
+        "1,120,1": [
+            "KEY_F3",
+            "keyboard"
+        ],
+        "1,204,1": [
+            "KEY_F4",
+            "keyboard"
+        ],
+        "1,229,1": [
+            "KEY_F5",
+            "keyboard"
+        ],
+        "1,230,1": [
+            "KEY_F6",
+            "keyboard"
+        ],
+        "1,165,1": [
+            "KEY_F7",
+            "keyboard"
+        ],
+        "1,164,1": [
+            "KEY_F8",
+            "keyboard"
+        ],
+        "1,163,1": [
+            "KEY_F9",
+            "keyboard"
+        ],
+        "1,113,1": [
+            "KEY_F10",
+            "keyboard"
+        ],
+        "1,114,1": [
+            "KEY_F11",
+            "keyboard"
+        ],
+        "1,115,1": [
+            "KEY_F12",
+            "keyboard"
+        ]
+    }
+}
