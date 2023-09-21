@@ -1,17 +1,19 @@
-{ ... }:
+{ config, ... }:
+let
+  link = config.lib.file.mkOutOfStoreSymlink;
+in
 {
   home = {
     file = {
       ".config/input-remapper/config.json" = {
         enable = true;
-        source = link ./input-remapper/config.json;
+        source = link ./config.json;
         target = ".config/input-remapper/config.json";
       };
-      ".config/input-remapper/presets/ROYUAN OLV75" = {
+      ".config/input-remapper/presets/ROYUAN OLV75/default.json" = {
         enable = true;
-        source = link "./input-remapper/presets/ROYUAN OLV75";
-        recursive = true;
-        target = ".config/input-remapper/ROYUAN OLV75";
+        source = link "./presets/ROYUAN OLV75/default.json";
+        target = ".config/input-remapper/ROYUAN OLV75/default.json";
       };
     };
   };
