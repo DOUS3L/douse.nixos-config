@@ -1,4 +1,4 @@
-{ user, pkgs, inputs, config, ... }:
+{ user, pkgs, unstable, inputs, config, ... }:
 
 {
   boot.supportedFilesystems = [ "ntfs" ];
@@ -78,6 +78,10 @@
       git
       nil
       nixpkgs-fmt
+
+      unstable.android-file-transfer
+      unstable.jmtpfs
+      unstable.go-mtpfs
     ];
   };
 
@@ -114,6 +118,7 @@
       pulse.enable = true;
       jack.enable = true;
     };
+    gvfs.enable = true;
     udisks2.enable = true;
   };
 

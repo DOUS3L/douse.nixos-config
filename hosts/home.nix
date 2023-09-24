@@ -64,8 +64,8 @@
       bitwarden
       firefox
       sublime4
-      libsForQt5.dolphin
       unstable.logseq
+      unstable.motrix
 
 
       # file management

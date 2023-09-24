@@ -11,6 +11,7 @@
       })
       unstable.vivaldi-ffmpeg-codecs
       unstable.slack
+      unstable.spotify
       unstable.gh
 
       unstable.devbox

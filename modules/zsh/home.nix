@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, unstable, ... }:
 
 {
   programs = {
@@ -11,8 +11,9 @@
       shellAliases = {
         sctl = "systemctl";
       };
-
       initExtra = ''
+        source ${unstable.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
         # Navigation with ranger-fm
         ranger_cd() {
           temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
