@@ -52,6 +52,7 @@
       ranger
       unstable.lf
       unstable.xplr
+      jq
 
       # video/audio
       feh

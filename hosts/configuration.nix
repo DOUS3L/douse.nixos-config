@@ -1,4 +1,4 @@
-{ user, pkgs, unstable, inputs, config, ... }:
+{ user, pkgs, unstable, lib, inputs, config, ... }:
 
 {
   boot.supportedFilesystems = [ "ntfs" ];
@@ -121,6 +121,12 @@
     gvfs.enable = true;
     udisks2.enable = true;
   };
+
+  # universal logseq vault
+  system.activationScripts.makeLogseqVaultDirectory = lib.stringAfter [ "var" ] ''
+    mkdir -p /var/lib/logseq.vault.d
+    chmod --recursive 777 /var/lib/logseq.vault.d
+  '';
 
 
   nix = {
