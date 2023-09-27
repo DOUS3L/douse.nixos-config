@@ -23,30 +23,32 @@
     };
   };
 
-  fonts.fonts = with pkgs; [
-    carlito
-    vegur
-    source-code-pro
-    jetbrains-mono
-    font-awesome
-    corefonts
-    meslo-lgs-nf
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "Hack"
-        "DroidSansMono"
-        "Meslo"
-        "Hack"
-        "Iosevka"
-        "IosevkaTerm"
-        "JetBrainsMono"
-        "ComicShannsMono"
-        "CodeNewRoman"
-        "FantasqueSansMono"
-      ];
-    })
-  ];
+  fonts = {
+    fonts = with pkgs; [
+      carlito
+      vegur
+      source-code-pro
+      jetbrains-mono
+      font-awesome
+      corefonts
+      meslo-lgs-nf
+      (nerdfonts.override {
+        fonts = [
+          "FiraCode"
+          "Hack"
+          "DroidSansMono"
+          "Meslo"
+          "Hack"
+          "Iosevka"
+          "IosevkaTerm"
+          "JetBrainsMono"
+          "ComicShannsMono"
+          "CodeNewRoman"
+          "FantasqueSansMono"
+        ];
+      })
+    ];
+  };
 
   environment = {
     variables = {
@@ -123,10 +125,10 @@
   };
 
   # universal logseq vault
-  system.activationScripts.makeLogseqVaultDirectory = lib.stringAfter [ "var" ] ''
-    mkdir -p /var/lib/logseq.vault.d
-    chmod --recursive 777 /var/lib/logseq.vault.d
-  '';
+  # system.activationScripts.makeLogseqVaultDirectory = lib.stringAfter [ "var" ] ''
+  #   mkdir -p /var/lib/logseq.vault.d
+  #   chmod --recursive 777 /var/lib/logseq.vault.d
+  # '';
 
 
   nix = {

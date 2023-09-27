@@ -43,6 +43,8 @@ in
         inherit modifier;
 
         assigns = {
+          "$ws7" = [{ class = "Sublime_text"; }];
+          "$ws8" = [{ class = "Spotify"; }];
           "$ws9" = [{ class = "Slack"; } { class = "discord"; }];
           "$ws10" = [{ class = "firefox"; } { title = "^Mozilla Firefox$"; } { class = "Vivaldi-stable"; }];
         };

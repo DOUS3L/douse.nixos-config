@@ -5,6 +5,7 @@
     ../../modules/picom/home.nix
     ../../modules/dunst/home.nix
     ../../modules/input-remapper/home.nix
+    ../../modules/fcitx5/home.nix
   ];
 
   programs = {

@@ -67,6 +67,11 @@
         path = "${config.home.homeDirectory}/.ssh/id_rsa.pub";
         sopsFile = ../../secrets/secrets_oceanedge.yaml;
       };
+      sshconfig = {
+        path = "${config.home.homeDirectory}/.ssh/config";
+        mode = "0600";
+        sopsFile = ../../secrets/secrets_oceanedge.yaml;
+      };
     };
   };
 
