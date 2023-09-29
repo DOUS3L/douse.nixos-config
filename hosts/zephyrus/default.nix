@@ -68,7 +68,6 @@
       pkgs.brightnessctl
       pkgs.powerstat
       pkgs.pamixer
-      pkgs.podman-compose
     ];
   };
 
@@ -201,12 +200,26 @@
   ];
 
   virtualisation = {
-    podman = {
+    # podman = {
+    #   enable = true;
+    #   # Create a `docker` alias for podman, to use it as a drop-in replacement
+    #   dockerCompat = true;
+    #   # Required for containers under podman-compose to be able to talk to each other.
+    #   defaultNetwork.settings.dns_enabled = true;
+    # };
+    docker = {
       enable = true;
-      # Create a `docker` alias for podman, to use it as a drop-in replacement
-      dockerCompat = true;
-      # Required for containers under podman-compose to be able to talk to each other.
-      defaultNetwork.settings.dns_enabled = true;
+      package = unstable.docker;
+      enableOnBoot = false;
+      # rootless = {
+      #   enable = true;
+      #   package = unstable.docker;
+      #   setSocketVariable = true;
+      # };
+      autoPrune = {
+        enable = true;
+        dates = "weekly";
+      };
     };
   };
 

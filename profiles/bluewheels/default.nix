@@ -2,7 +2,7 @@
 {
   users.users.${bluewheels-user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
     shell = pkgs.zsh;
     home = "/home/${bluewheels-user}";
   };

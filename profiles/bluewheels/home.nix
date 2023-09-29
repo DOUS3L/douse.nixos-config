@@ -25,6 +25,10 @@
       unstable.kubernetes-helm
       unstable.k9s
       unstable.fluxcd
+
+      unstable.dbeaver
+
+      unstable.usql
     ];
   };
 
