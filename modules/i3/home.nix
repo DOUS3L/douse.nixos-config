@@ -244,7 +244,7 @@ in
               criteria = { instance = "pavucontrol"; class = "Pavucontrol"; };
             }
             {
-              command = "floating enable, resize set 1400 1000, border pixel 2, move scratchpad";
+              command = "floating enable, resize set 1800 1200, border pixel 2, move scratchpad";
               criteria = { instance = "logseq"; };
             }
           ];

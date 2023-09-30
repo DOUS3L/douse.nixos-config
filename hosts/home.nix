@@ -1,9 +1,6 @@
 { config, pkgs, unstable, ... }:
 
 {
-  #imports = (import ../modules/zsh/home.nix) ++
-  #  (import ../modules/helix/home.nix) ++
-  #  (import ../modules/neovim/home.nix);
   imports = [
     ../modules/alacritty/home.nix
     ../modules/wezterm/home.nix
@@ -53,6 +50,7 @@
       unstable.lf
       unstable.xplr
       jq
+      unstable.yt-dlp
 
       # video/audio
       feh
@@ -67,6 +65,7 @@
       sublime4
       unstable.logseq
       unstable.motrix
+      unstable.tartube-yt-dlp
 
 
       # file management
