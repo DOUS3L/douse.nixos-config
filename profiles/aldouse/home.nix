@@ -14,6 +14,7 @@
     ];
   };
 
+
   # additional i3 configuration
   xsession.windowManager.i3.config.startup = [
     {

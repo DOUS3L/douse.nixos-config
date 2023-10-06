@@ -63,23 +63,26 @@
       font-manager
       fzf
       gcc
+      gcc-unwrapped
+      git
+      glib
       gnumake
       gnupg
-      killall
-      iw
-      wirelesstools
-      nano
-      pciutils
-      usbutils
       inetutils
-      sops
-      sysstat
-      wget
-      xclip
-      xorg.xdpyinfo
-      git
+      iw
+      killall
+      nano
       nil
       nixpkgs-fmt
+      pciutils
+      sops
+      stdenv
+      sysstat
+      usbutils
+      wget
+      wirelesstools
+      xclip
+      xorg.xdpyinfo
 
       unstable.android-file-transfer
       unstable.jmtpfs

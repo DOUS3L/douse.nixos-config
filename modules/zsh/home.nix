@@ -7,24 +7,23 @@
       enableAutosuggestions = true;
       #      syntaxHighlighting.enable = true;
       enableCompletion = true;
-      history.size = 100000;
+      history = {
+        size = 100000;
+        extended = true;
+      };
       shellAliases = {
         sctl = "systemctl";
       };
       initExtra = ''
         source ${unstable.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-        # Navigation with ranger-fm
-        ranger_cd() {
-          temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
-          ranger --choosedir="$temp_file" -- "''${@:-$PWD}"
-          if chosen_dir="$(cat -- "$temp_file")" && [ -n "$chosen_dir" ] && [ "$chosen_dir" != "$PWD" ]; then
-              cd -- "$chosen_dir"
-          fi
-          rm -f -- "$temp_file"
+        # Navigation with lf
+        lfcd () {
+            # `command` is needed in case `lfcd` is aliased to `lf`
+            cd "$(command lf -print-last-dir "$@")"
         }
 
-        bindkey -s '^o' 'ranger_cd\n'
+        bindkey -s '^o' 'lfcd\n'
 
         (cat ~/.cache/wal/sequences &)
       '';
@@ -39,6 +38,16 @@
           name = "powerlevel10k-config";
           src = ./p10k-config;
           file = "p10k.zsh";
+        }
+        {
+          name = "zsh-nix-shell";
+          file = "nix-shell.plugin.zsh";
+          src = pkgs.fetchFromGitHub {
+            owner = "chisui";
+            repo = "zsh-nix-shell";
+            rev = "v0.7.0";
+            sha256 = "149zh2rm59blr2q458a5irkfh82y3dwdich60s9670kl3cl5h2m1";
+          };
         }
       ];
     };

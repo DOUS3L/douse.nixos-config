@@ -9,6 +9,7 @@
     ../modules/helix/home.nix
     ../modules/neovim/home.nix
     ../modules/tmux/home.nix
+    ../modules/lf/home.nix
   ];
 
   xdg = {
@@ -46,8 +47,6 @@
 
     packages = with pkgs; [
       # terminal
-      ranger
-      unstable.lf
       unstable.xplr
       jq
       unstable.yt-dlp
@@ -66,6 +65,7 @@
       unstable.logseq
       unstable.motrix
       unstable.tartube-yt-dlp
+      unstable.qbittorrent
 
 
       # file management
