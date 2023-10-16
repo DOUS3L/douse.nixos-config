@@ -61,7 +61,7 @@
       appimage-run
       bitwarden
       firefox
-      sublime4
+      # unstable.sublime4
       unstable.logseq
       unstable.motrix
       unstable.tartube-yt-dlp

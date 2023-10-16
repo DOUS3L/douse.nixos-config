@@ -63,7 +63,6 @@
       pkgs.powertop
       # pkgs.asusctl
       pkgs.cpufrequtils
-      pkgs.linuxKernel.packages.linux_6_4.cpupower
       pkgs.arandr
       pkgs.brightnessctl
       pkgs.powerstat
@@ -107,12 +106,52 @@
             };
           };
         };
+        "room2" = {
+          fingerprint = {
+            eDP-1 = "00ffffffffffff0051b88114000000001d1f0104a51e1378070f91ae5243b0260f505400000001010101010101010101010101010101c0d800a0a04064602b2075042dbc10000018606c00a0a04064602b2075042dbc10000018000000fd003078cece38010a202020202020000000fc00544c3134304144585030310a200093";
+            HDMI-1-1 = "00ffffffffffff0005e3022726000000311e0103803c22782ab3e5ac5048a426115054bfef00d1c081803168317c4568457c6168617c565e00a0a0a029503020350055502100001e40e7006aa0a067500820980455502100001a000000fc00513237473247340a2020202020000000fd0030901ee63c000a2020202020200149020330f14c101f0514041303120211013f230907078301000065030c00100067d85dc401788000681a000001013090e66fc200a0a0a055503020350055502100001e5aa000a0a0a046503020350055502100001e023a801871382d40582c450055502100001ef03c00d051a0355060883a0055502100001c00000000000000fd";
+          };
+          config = {
+            eDP-1 = {
+              enable = true;
+              crtc = 0;
+              mode = "2560x1600";
+              position = "0x0";
+              primary = true;
+              rate = "120.00";
+            };
+            HDMI-1-1 = {
+              enable = true;
+              crtc = 4;
+              mode = "2560x1440";
+              position = "2560x80";
+              primary = false;
+              rate = "96.00";
+            };
+          };
+        };
         "roam" = {
           fingerprint = {
             eDP-2 = "00ffffffffffff0051b88114000000001d1f0104a51e1378070f91ae5243b0260f505400000001010101010101010101010101010101c0d800a0a04064602b2075042dbc10000018606c00a0a04064602b2075042dbc10000018000000fd003078cece38010a202020202020000000fc00544c3134304144585030310a200093";
           };
           config = {
             eDP-2 = {
+              enable = true;
+              crtc = 0;
+              mode = "2560x1600";
+              position = "0x0";
+              primary = true;
+              rate = "60.00";
+              # dpi = 120;
+            };
+          };
+        };
+        "roam2" = {
+          fingerprint = {
+            eDP-1 = "00ffffffffffff0051b88114000000001d1f0104a51e1378070f91ae5243b0260f505400000001010101010101010101010101010101c0d800a0a04064602b2075042dbc10000018606c00a0a04064602b2075042dbc10000018000000fd003078cece38010a202020202020000000fc00544c3134304144585030310a200093";
+          };
+          config = {
+            eDP-1 = {
               enable = true;
               crtc = 0;
               mode = "2560x1600";
@@ -174,7 +213,7 @@
         SOUND_POWER_SAVE_ON_BAT = 0;
 
         # runtime and ASPM
-        PCIE_ASPM_ON_AC = "performance";
+        PCIE_ASPM_ON_AC = "default";
         PCIE_ASPM_ON_BAT = "powersupersave";
 
       };
@@ -229,5 +268,4 @@
   #   '';
   #   wantedBy = [ "multi-user.target" ];
   # };
-
 }
