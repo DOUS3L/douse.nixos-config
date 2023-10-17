@@ -11,6 +11,7 @@
         withOpenASAR = true;
       })
       unstable.scrcpy
+      unstable.telegram-desktop
     ];
   };
 
