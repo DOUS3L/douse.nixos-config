@@ -25,7 +25,7 @@
 
         bindkey -s '^o' 'lfcd\n'
 
-        (cat ~/.cache/wal/sequences &)
+        (cat ~/.cache/wal/sequences || true &)
       '';
 
       plugins = [
