@@ -1,10 +1,6 @@
 { user, pkgs, unstable, lib, inputs, config, ... }:
 
 {
-  imports = [
-    <nixos-wsl/modules>
-  ];
-
   networking.hostName = "zph-wsl2";
 
   security.sudo.wheelNeedsPassword = false;

@@ -12,6 +12,8 @@
     ../modules/lf/home.nix
   ];
 
+  
+
   xdg = {
     enable = true;
   };

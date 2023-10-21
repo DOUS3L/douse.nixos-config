@@ -10,6 +10,11 @@ let
 
   lib = nixpkgs.lib;
 
+  nixos-wsl = {
+    url = "github:nix-community/NixOS-WSL";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
 in
 {
 
@@ -111,6 +116,7 @@ in
 
     modules = [
       ./zph-wsl2
+      nixos-wsl.nixosModules.wsl
 
       home-manager.nixosModules.home-manager
       {
