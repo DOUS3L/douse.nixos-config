@@ -114,7 +114,13 @@ in
       ./zph-wsl2
       ../profiles/oceanedge
 
-      nixos-wsl.nixosModules.wsl
+      nixos-wsl.nixosModules.wsl {
+        wsl = {
+          enable = true;
+          defaultUser = "${oceanedge-user}";
+          startMenuLaunchers = true;
+        };
+      }
 
       home-manager.nixosModules.home-manager
       {

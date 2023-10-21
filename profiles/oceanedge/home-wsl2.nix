@@ -1,5 +1,6 @@
 { config, oceanedge-user, pkgs, unstable, ... }:
 {
+  
   home = {
     username = "${oceanedge-user}";
     homeDirectory = "/home/${oceanedge-user}";
