@@ -126,7 +126,7 @@ in
         home-manager.users.${oceanedge-user} = {
           imports =
             [ (import ../profiles/${oceanedge-user}/home.nix) ]
-            ++ [ (import ./zephyrus/home.nix) ]
+            ++ [ (import ./zph-wsl2/home.nix) ]
           ;
         };
 
