@@ -1,4 +1,4 @@
-{ pkgs, user, unstable, ... }:
+{ pkgs, user, unstable, config, ... }:
 {
   home = {
     username = "${user}";
@@ -15,6 +15,15 @@
     ];
   };
 
+  sops = {
+    secrets = {
+      sshconfig = {
+        path = "${config.home.homeDirectory}/.ssh/config";
+        mode = "0600";
+        sopsFile = ../../secrets/secrets.yaml;
+      };
+    };
+  };
 
   # additional i3 configuration
   xsession.windowManager.i3.config.startup = [
