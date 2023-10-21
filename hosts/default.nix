@@ -73,7 +73,7 @@ in
   virtualbox = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs user unstable oceanedge-user;
+      inherit inputs user unstable;
     };
 
     modules = [
@@ -107,7 +107,7 @@ in
   zph-wsl2 = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs user unstable;
+      inherit inputs user unstable oceanedge-user;
     };
 
     modules = [
