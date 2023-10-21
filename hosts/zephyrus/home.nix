@@ -6,6 +6,7 @@
     ../../modules/dunst/home.nix
     ../../modules/input-remapper/home.nix
     ../../modules/fcitx5/home.nix
+    ../../modules/vscode/home.nix
   ];
 
   programs = {
