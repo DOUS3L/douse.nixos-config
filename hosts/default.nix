@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, nixpkgs-unstable, user, oceanedge-user, bluewheels-user, home-manager, sops-nix, ... }:
+{ lib, inputs, nixpkgs, nixpkgs-unstable, user, oceanedge-user, bluewheels-user, home-manager, sops-nix, nixos-wsl, ... }:
 
 let
   system = "x86_64-linux";
@@ -10,14 +10,10 @@ let
 
   lib = nixpkgs.lib;
 
-  nixos-wsl = {
-    url = "github:nix-community/NixOS-WSL";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
+
 
 in
 {
-
   # zephyrus ga402rk config
   zephyrus = lib.nixosSystem {
     inherit system;
