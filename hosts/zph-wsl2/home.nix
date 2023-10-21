@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ../modules/zsh/home.nix
-    ../modules/helix/home.nix
-    ../modules/neovim/home.nix
-    ../modules/tmux/home.nix
-    ../modules/lf/home.nix
+    ../../modules/zsh/home.nix
+    ../../modules/helix/home.nix
+    ../../modules/neovim/home.nix
+    ../../modules/tmux/home.nix
+    ../../modules/lf/home.nix
   ];
 
   # need to enable sops-nix service manually
