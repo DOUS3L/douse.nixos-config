@@ -125,10 +125,6 @@ in
           inherit unstable user oceanedge-user bluewheels-user;
         };
 
-        home-manager.extraSpecialArgs = {
-          inherit unstable user;
-        };
-
         home-manager.users.${oceanedge-user} = {
           imports =
             [ (import ../profiles/${oceanedge-user}/home.nix) ]
