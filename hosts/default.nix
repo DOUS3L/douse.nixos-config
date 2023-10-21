@@ -101,4 +101,37 @@ in
       }
     ];
   };
+
+  # zph-wsl2 config
+  zph-wsl2 = lib.nixosSystem {
+    inherit system;
+    specialArgs = {
+      inherit inputs user unstable;
+    };
+
+    modules = [
+      ./zph-wsl2
+
+      home-manager.nixosModules.home-manager
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+
+        home-manager.extraSpecialArgs = {
+          inherit unstable user;
+        };
+
+        home-manager.users.${oceanedge-user} = {
+          imports =
+            [ (import ../profiles/${oceanedge-user}/home.nix) ]
+            ++ [ (import ./zephyrus/home.nix) ]
+          ;
+        };
+
+        home-manager.sharedModules = [
+          sops-nix.homeManagerModules.sops
+        ];
+      }
+    ];
+  };
 }
