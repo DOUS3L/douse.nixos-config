@@ -112,12 +112,18 @@ in
 
     modules = [
       ./zph-wsl2
+      ../profiles/oceanedge
+
       nixos-wsl.nixosModules.wsl
 
       home-manager.nixosModules.home-manager
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
+
+        home-manager.extraSpecialArgs = {
+          inherit unstable user oceanedge-user bluewheels-user;
+        };
 
         home-manager.extraSpecialArgs = {
           inherit unstable user;
