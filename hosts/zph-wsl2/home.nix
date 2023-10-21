@@ -12,7 +12,7 @@
   # need to enable sops-nix service manually
   # systemctl --user start sops-nix.service
   sops = {
-    defaultSopsFile = ../secrets/secrets.yaml;
+    defaultSopsFile = ../../secrets/secrets.yaml;
     age = {
       keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
     };
