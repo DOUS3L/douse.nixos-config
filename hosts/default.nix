@@ -79,6 +79,7 @@ in
     modules = [
       ./virtualbox
       ./configuration.nix
+      ../profiles/aldouse
       ../profiles/oceanedge
       ../profiles/bluewheels
 
