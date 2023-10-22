@@ -118,6 +118,7 @@ in
         wsl = {
           enable = true;
           defaultUser = "${oceanedge-user}";
+          nativeSystemd = true;
           startMenuLaunchers = true;
         };
       }
