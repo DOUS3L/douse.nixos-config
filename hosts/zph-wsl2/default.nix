@@ -1,6 +1,9 @@
 { user, pkgs, unstable, lib, inputs, config, ... }:
 
 {
+  imports = [
+    ../../modules/vscode-server/default.nix
+  ];
   networking.hostName = "zph-wsl2";
 
   security.sudo.wheelNeedsPassword = false;
@@ -123,8 +126,6 @@
   nixpkgs.config = {
     allowUnfree = true;
   };
-
-
 
   system = {
     stateVersion = "23.05";
