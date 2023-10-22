@@ -86,12 +86,21 @@ in
         home-manager.useUserPackages = true;
 
         home-manager.extraSpecialArgs = {
-          inherit unstable user;
+          inherit unstable oceanedge-user bluewheels-user;
         };
 
-        home-manager.users.${user} = {
+        home-manager.users.${oceanedge-user} = {
           imports =
-            [ (import ./home.nix) ]
+            [ (import ../profiles/${oceanedge-user}/home.nix) ]
+            ++ [ (import ./home.nix) ]
+            ++ [ (import ./virtualbox/home.nix) ]
+          ;
+        };
+
+        home-manager.users.${bluewheels-user} = {
+          imports =
+            [ (import ../profiles/${bluewheels-user}/home.nix) ]
+            ++ [ (import ./home.nix) ]
             ++ [ (import ./virtualbox/home.nix) ]
           ;
         };
