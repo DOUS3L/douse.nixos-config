@@ -79,6 +79,8 @@ in
     modules = [
       ./virtualbox
       ./configuration.nix
+      ../profiles/oceanedge
+      ../profiles/bluewheels
 
       home-manager.nixosModules.home-manager
       {
