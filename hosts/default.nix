@@ -73,7 +73,7 @@ in
   virtualbox = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs user unstable;
+      inherit inputs user unstable oceanedge-user bluewheels-user;
     };
 
     modules = [
