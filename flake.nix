@@ -12,15 +12,9 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
 
-  nixos-wsl = {
-    url = "github:nix-community/NixOS-WSL";
-    inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  };
-
-
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, sops-nix, nixos-wsl, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, sops-nix, ... }:
     let
       # default user
       user = "aldouse";
@@ -31,7 +25,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit user oceanedge-user bluewheels-user inputs nixpkgs nixpkgs-unstable home-manager sops-nix nixos-wsl;
+          inherit user oceanedge-user bluewheels-user inputs nixpkgs nixpkgs-unstable home-manager sops-nix;
         }
       );
     };
