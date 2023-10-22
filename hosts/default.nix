@@ -119,6 +119,7 @@ in
           enable = true;
           defaultUser = "${oceanedge-user}";
           # nativeSystemd = true;
+          automountPath = "/mnt";
           startMenuLaunchers = true;
         };
       }
