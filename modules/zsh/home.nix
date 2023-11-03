@@ -1,5 +1,19 @@
-{ pkgs, unstable, ... }:
-
+{ pkgs, unstable, host, ... }:
+let
+  initextra = 
+    if host.hostName == "zg14-wsl2" then
+      ""
+    else
+      ''source ${unstable.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+        # Navigation with lf
+        lfcd () {
+            # `command` is needed in case `lfcd` is aliased to `lf`
+            cd "$(command lf -print-last-dir "$@")"
+        }
+        bindkey -s '^o' 'lfcd\n'
+        (cat ~/.cache/wal/sequences || true &)
+      '';
+in
 {
   programs = {
     zsh = {
@@ -14,19 +28,7 @@
       shellAliases = {
         sctl = "systemctl";
       };
-      initExtra = ''
-        source ${unstable.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-        # Navigation with lf
-        lfcd () {
-            # `command` is needed in case `lfcd` is aliased to `lf`
-            cd "$(command lf -print-last-dir "$@")"
-        }
-
-        bindkey -s '^o' 'lfcd\n'
-
-        (cat ~/.cache/wal/sequences || true &)
-      '';
+      initExtra = initextra;
 
       plugins = [
         {
