@@ -94,8 +94,6 @@ in
           "${modifier}+v" = ''[instance="pavucontrol"] scratchpad show, move position center'';
           ## floating alacritty
           "${modifier}+t" = ''[instance="floatingterm"] scratchpad show, move position center'';
-          ## floating logseq
-          "${modifier}+n" = ''[instance="logseq"] scratchpad show, move position center'';
           ## brightness control
           "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%-";
           "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%+";
@@ -221,11 +219,6 @@ in
             notification = false;
           }
           {
-            command = "${unstable.logseq}/bin/logseq &";
-            always = true;
-            notification = false;
-          }
-          {
             command = "${pkgs.autorandr}/bin/autorandr -c && ${pkgs.pywal}/bin/wal -i ~/wallpapers";
             always = false;
             notification = false;
@@ -242,10 +235,6 @@ in
             {
               command = "floating enable, resize set 800 800, move scratchpad";
               criteria = { instance = "pavucontrol"; class = "Pavucontrol"; };
-            }
-            {
-              command = "floating enable, resize set 1800 1200, border pixel 2, move scratchpad";
-              criteria = { instance = "logseq"; };
             }
           ];
           titlebar = false;

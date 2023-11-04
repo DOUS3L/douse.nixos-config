@@ -64,7 +64,6 @@
       bitwarden
       firefox
       # unstable.sublime4
-      unstable.logseq
       unstable.motrix
       unstable.tartube-yt-dlp
       unstable.qbittorrent
