@@ -4,11 +4,9 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/i3/default.nix
-    "${nixpkgs-unstable}/nixos/modules/services/hardware/tlp.nix"
     ../../modules/input-remapper/default.nix
     ../../modules/fcitx5/default.nix
   ];
-  disabledModules = [ "services/hardware/tlp.nix" ];
 
 
   boot = {
