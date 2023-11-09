@@ -56,6 +56,10 @@
   networking.networkmanager.enable = true;
 
   environment = {
+    extraInit = ''
+      xset s off -dpms
+      xset s noblank
+    '';
     systemPackages = [
       pkgs.acpi
       pkgs.powertop
