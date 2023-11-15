@@ -7,6 +7,8 @@
     packages = [
       pkgs.python311 # for i3blocks
 
+      unstable.go
+
       (unstable.discord.override {
         withOpenASAR = true;
       })
