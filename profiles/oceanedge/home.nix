@@ -35,6 +35,11 @@
       unstable.postgresql
       unstable.mysql
       unstable.usql
+
+      unstable.go
+      unstable.gopls
+      unstable.delve
+
     ];
   };
 

@@ -19,6 +19,10 @@
       pkgs.python310Packages.pip
       pkgs.poetry
 
+      unstable.go
+      unstable.gopls
+      unstable.delve
+
       unstable.insomnia
 
       unstable.kubectl

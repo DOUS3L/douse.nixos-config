@@ -13,6 +13,9 @@ in
       # gui neovim
       neovide
 
+      luajitPackages.luarocks
+      luajitPackages.luacheck
+
     ];
 
     file = {

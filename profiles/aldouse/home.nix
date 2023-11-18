@@ -8,6 +8,9 @@
       pkgs.python311 # for i3blocks
 
       unstable.go
+      unstable.gopls
+      unstable.delve
+      unstable.jetbrains.idea-community
 
       (unstable.discord.override {
         withOpenASAR = true;
