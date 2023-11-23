@@ -40,6 +40,8 @@
       unstable.gopls
       unstable.delve
 
+      pkgs.postman
+
     ];
   };
 
