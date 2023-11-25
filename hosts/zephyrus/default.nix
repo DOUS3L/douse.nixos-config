@@ -54,6 +54,7 @@
   networking.firewall.checkReversePath = "loose";
   networking.wireguard.enable = true;
   networking.networkmanager.enable = true;
+  # networking.wireless.enable = true;
 
   environment = {
     extraInit = ''
