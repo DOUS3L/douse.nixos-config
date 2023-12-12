@@ -62,7 +62,8 @@
       # apps
       appimage-run
       bitwarden
-      firefox
+      unstable.firefox
+      unstable.floorp
       # unstable.sublime4
       unstable.motrix
       unstable.tartube-yt-dlp
