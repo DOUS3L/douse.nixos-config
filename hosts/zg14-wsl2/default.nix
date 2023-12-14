@@ -13,7 +13,7 @@
   };
 
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       carlito
       vegur
       source-code-pro
@@ -110,6 +110,6 @@
   };
 
   system = {
-    stateVersion = "23.05";
+    stateVersion = "23.11";
   };
 }

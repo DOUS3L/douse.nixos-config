@@ -41,7 +41,9 @@
       unstable.gopls
       unstable.delve
 
-      pkgs.postman
+      unstable.kn
+      unstable.kind
+
 
     ];
   };
