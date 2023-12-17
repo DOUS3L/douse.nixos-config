@@ -84,6 +84,18 @@
     zsh.enable = true;
   };
 
+  virtualisation = {
+    docker = {
+      enable = true;
+      package = unstable.docker;
+      enableOnBoot = false;
+      autoPrune = {
+        enable = true;
+        dates = "weekly";
+      };
+    };
+  };
+
   nix = {
     settings = {
       auto-optimise-store = true;
