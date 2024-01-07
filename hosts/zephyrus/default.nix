@@ -206,7 +206,7 @@
         CPU_BOOST_ON_AC = 0;
         CPU_BOOST_ON_BAT = 0;
         CPU_SCALING_MIN_FREQ_ON_AC = 400000;
-        CPU_SCALING_MAX_FREQ_ON_AC = 3300000;
+        CPU_SCALING_MAX_FREQ_ON_AC = 1800000;
         CPU_SCALING_MIN_FREQ_ON_BAT = 400000;
         CPU_SCALING_MAX_FREQ_ON_BAT = 1800000;
 
@@ -216,7 +216,7 @@
         SOUND_POWER_SAVE_ON_BAT = 0;
 
         # runtime and ASPM
-        PCIE_ASPM_ON_AC = "default";
+        PCIE_ASPM_ON_AC = "powersupersave";
         PCIE_ASPM_ON_BAT = "powersupersave";
 
       };

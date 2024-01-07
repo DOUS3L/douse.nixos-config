@@ -43,6 +43,10 @@
 
       unstable.kn
       unstable.kind
+      unstable.kaf
+      unstable.func
+      unstable.istioctl
+      unstable.hey
 
 
     ];
