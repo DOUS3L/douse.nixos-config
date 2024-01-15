@@ -47,8 +47,7 @@
       unstable.func
       unstable.istioctl
       unstable.hey
-
-
+      unstable.bruno
     ];
   };
 

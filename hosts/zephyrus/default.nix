@@ -8,6 +8,7 @@
     ../../modules/fcitx5/default.nix
   ];
 
+  time.hardwareClockInLocalTime = true;
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -193,7 +194,7 @@
       settings = {
         # battery
         START_CHARGE_THRESH_BAT0 = 0;
-        STOP_CHARGE_THRESH_BAT0 = 60;
+        # STOP_CHARGE_THRESH_BAT0 = 60;
 
         # graphics
         RADEON_DPM_PERF_LEVEL_ON_BAT = "low";
@@ -216,7 +217,7 @@
         SOUND_POWER_SAVE_ON_BAT = 0;
 
         # runtime and ASPM
-        PCIE_ASPM_ON_AC = "powersupersave";
+        PCIE_ASPM_ON_AC = "default";
         PCIE_ASPM_ON_BAT = "powersupersave";
 
       };

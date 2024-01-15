@@ -17,6 +17,10 @@
       })
       unstable.scrcpy
       unstable.telegram-desktop
+
+      unstable.notesnook
+      unstable.joplin
+      unstable.joplin-desktop
     ];
   };
 
