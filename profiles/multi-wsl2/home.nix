@@ -5,13 +5,17 @@
     homeDirectory = "/home/${multiwsl2-user}";
 
     packages = [
+      unstable.gcc_multi
       unstable.gh
+      unstable.kaf
+      unstable.kn
 
       unstable.python39
       unstable.pre-commit
 
       unstable.go
       unstable.gopls
+      unstable.delve
 
       (unstable.google-cloud-sdk.withExtraComponents [ unstable.google-cloud-sdk.components.gke-gcloud-auth-plugin ])
       unstable.k9s
@@ -24,6 +28,7 @@
       unstable.postgresql
       unstable.mysql
       unstable.usql
+
     ];
   };
 
