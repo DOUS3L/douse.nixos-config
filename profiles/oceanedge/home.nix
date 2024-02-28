@@ -48,6 +48,8 @@
       unstable.istioctl
       unstable.hey
       unstable.bruno
+      unstable.golangci-lint
+      unstable.golangci-lint-langserver
     ];
   };
 
