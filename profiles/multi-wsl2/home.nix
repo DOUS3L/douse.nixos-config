@@ -9,6 +9,10 @@
       unstable.gh
       unstable.kaf
       unstable.kn
+      unstable.prettierd
+      unstable.istioctl
+      unstable.kind
+      unstable.hey
 
       unstable.python39
       unstable.pre-commit
