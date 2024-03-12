@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, nixpkgs-unstable, user, oceanedge-user, bluewheels-user, home-manager, sops-nix, nixos-wsl, multiwsl2-user, ... }:
+{ lib, inputs, nixpkgs, nixpkgs-unstable, user, oceanedge-user, home-manager, sops-nix, nixos-wsl, multiwsl2-user, ... }:
 
 let
   system = "x86_64-linux";
@@ -16,7 +16,7 @@ in
   zephyrus = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs user unstable oceanedge-user bluewheels-user nixpkgs-unstable;
+      inherit inputs user unstable oceanedge-user nixpkgs-unstable;
       host = {
         hostName = "zephyrus";
       };
@@ -28,7 +28,6 @@ in
       ./configuration.nix
       ../profiles/aldouse
       ../profiles/oceanedge
-      ../profiles/bluewheels
 
       home-manager.nixosModules.home-manager
       {
@@ -36,7 +35,7 @@ in
         home-manager.useUserPackages = true;
 
         home-manager.extraSpecialArgs = {
-          inherit unstable user oceanedge-user bluewheels-user;
+          inherit unstable user oceanedge-user;
           host = {
             hostName = "zephyrus";
           };
@@ -53,14 +52,6 @@ in
         home-manager.users.${oceanedge-user} = {
           imports =
             [ (import ../profiles/${oceanedge-user}/home.nix) ]
-            ++ [ (import ./home.nix) ]
-            ++ [ (import ./zephyrus/home.nix) ]
-          ;
-        };
-
-        home-manager.users.${bluewheels-user} = {
-          imports =
-            [ (import ../profiles/${bluewheels-user}/home.nix) ]
             ++ [ (import ./home.nix) ]
             ++ [ (import ./zephyrus/home.nix) ]
           ;
@@ -122,7 +113,7 @@ in
   virtualbox = lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs user unstable oceanedge-user bluewheels-user;
+      inherit inputs user unstable oceanedge-user ;
     };
 
     modules = [
@@ -130,7 +121,6 @@ in
       ./configuration.nix
       ../profiles/aldouse
       ../profiles/oceanedge
-      ../profiles/bluewheels
 
       home-manager.nixosModules.home-manager
       {
@@ -138,20 +128,12 @@ in
         home-manager.useUserPackages = true;
 
         home-manager.extraSpecialArgs = {
-          inherit unstable oceanedge-user bluewheels-user;
+          inherit unstable oceanedge-user ;
         };
 
         home-manager.users.${oceanedge-user} = {
           imports =
             [ (import ../profiles/${oceanedge-user}/home.nix) ]
-            ++ [ (import ./home.nix) ]
-            ++ [ (import ./virtualbox/home.nix) ]
-          ;
-        };
-
-        home-manager.users.${bluewheels-user} = {
-          imports =
-            [ (import ../profiles/${bluewheels-user}/home.nix) ]
             ++ [ (import ./home.nix) ]
             ++ [ (import ./virtualbox/home.nix) ]
           ;

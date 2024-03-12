@@ -23,14 +23,13 @@
       # default user
       user = "aldouse";
       oceanedge-user = "oceanedge";
-      bluewheels-user = "bluewheels";
       multiwsl2-user = "multi-wsl2";
     in
     {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit user oceanedge-user bluewheels-user inputs nixpkgs nixpkgs-unstable home-manager sops-nix multiwsl2-user nixos-wsl;
+          inherit user oceanedge-user inputs nixpkgs nixpkgs-unstable home-manager sops-nix multiwsl2-user nixos-wsl;
         }
       );
     };

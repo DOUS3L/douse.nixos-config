@@ -50,6 +50,10 @@
       unstable.bruno
       unstable.golangci-lint
       unstable.golangci-lint-langserver
+
+      unstable.anytype
+
+      unstable.jetbrains.idea-community
     ];
   };
 
