@@ -54,6 +54,7 @@
       unstable.anytype
 
       unstable.jetbrains.idea-community
+      unstable.vopono
     ];
   };
 
@@ -63,7 +64,7 @@
     };
     zsh = {
       shellAliases = {
-        startvpns = "sudo systemctl start openvpn-alivpn0; sudo systemctl start openvpn-gcpvpn0.service; sudo systemctl start openvpn-gcpvpn1.service";
+        startvpns = "sudo systemctl start openvpn-gcpvpn0.service; sudo systemctl start openvpn-gcpvpn1.service";
       };
     };
   };

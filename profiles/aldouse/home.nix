@@ -20,6 +20,7 @@
 
 
       unstable.anytype
+      unstable.gparted
     ];
   };
 
