@@ -33,6 +33,8 @@
       unstable.mysql
       unstable.usql
 
+      unstable.lua-language-server
+
     ];
   };
 

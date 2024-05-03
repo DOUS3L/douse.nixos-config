@@ -10,9 +10,6 @@ in
       lazygit
       nodejs
 
-      # gui neovim
-      neovide
-
       luajitPackages.luarocks
       luajitPackages.luacheck
 
@@ -25,6 +22,18 @@ in
         recursive = true;
         target = ".config/astronvim";
       };
+      ".config/nvim-astronvim/lua" = {
+        enable = true;
+        source = link ./nvim-astronvim/lua;
+        recursive = true;
+        target = ".config/nvim-astronvim/lua";
+      };
+      ".config/nvim-astronvim/init.lua" = {
+        enable = true;
+        source = link ./nvim-astronvim/init.lua;
+        # recursive = true;
+        target = ".config/nvim-astronvim/init.lua";
+      };
     };
   };
 
@@ -34,6 +43,9 @@ in
       enable = true;
       viAlias = true;
       vimAlias = true;
+    };
+    zsh.shellAliases = {
+      astronvim = "NVIM_APPNAME=nvim-astronvim nvim";
     };
   };
 
