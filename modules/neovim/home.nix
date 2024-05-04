@@ -10,8 +10,15 @@ in
       lazygit
       nodejs
 
-      luajitPackages.luarocks
-      luajitPackages.luacheck
+      # luajitPackages.luarocks
+      # luajitPackages.luacheck
+
+      stylua
+
+      # for astronvim nix pack
+      alejandra
+      deadnix
+      statix
 
     ];
 
@@ -36,6 +43,7 @@ in
       };
     };
   };
+
 
   programs = {
     git.extraConfig.core.editor = "nvim";
