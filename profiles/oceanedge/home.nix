@@ -19,6 +19,7 @@
       unstable.gh
       unstable.lazydocker
 
+
       unstable.python39
       unstable.devbox
       unstable.pre-commit
