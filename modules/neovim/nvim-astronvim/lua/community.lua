@@ -11,5 +11,6 @@ return {
   { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.motion.mini-surround" },
   -- import/override with your plugins folder
 }
