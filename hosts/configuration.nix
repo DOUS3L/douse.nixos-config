@@ -138,7 +138,7 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
-    package = pkgs.nixVersions.unstable;
+    package = pkgs.nixVersions.latest;
     registry.nixpkgs.flake = inputs.nixpkgs;
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -155,6 +155,6 @@
   };
 
   system = {
-    stateVersion = "23.11";
+    stateVersion = "24.05";
   };
 }

@@ -4,7 +4,6 @@
     alacritty = {
       enable = true;
       settings = {
-        dynamic_padding = true;
         cursor = {
           style = {
             shape = "Underline";
