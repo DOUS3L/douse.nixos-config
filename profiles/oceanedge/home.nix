@@ -18,6 +18,10 @@
       unstable.spotify
       unstable.gh
       unstable.lazydocker
+      unstable.obsidian
+      unstable.zoom-us
+      unstable.cookiecutter
+      unstable.gcrane
 
 
       unstable.python39

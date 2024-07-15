@@ -49,6 +49,8 @@
       unstable.postgresql
       unstable.mysql
       unstable.usql
+
+      unstable.obsidian
     ];
   };
 

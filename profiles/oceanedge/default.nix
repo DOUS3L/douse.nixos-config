@@ -7,6 +7,8 @@
     home = "/home/${oceanedge-user}";
   };
 
+  programs.nix-ld.enable = true; 
+
   services.openvpn.servers = {
     # alivpn0 = {
     #   config = "config /home/${oceanedge-user}/.secrets/alivpn0.ovpn";
