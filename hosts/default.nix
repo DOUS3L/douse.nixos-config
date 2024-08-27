@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, nixpkgs-unstable, user, oceanedge-user, home-manager, sops-nix, nixos-wsl, multiwsl2-user, ... }:
+{ lib, inputs, nixpkgs, nixpkgs-unstable, user, oceanedge-user, home-manager, sops-nix, nixos-wsl, multiwsl2-user,nur, ... }:
 
 let
   system = "x86_64-linux";
@@ -59,6 +59,7 @@ in
 
         home-manager.sharedModules = [
           sops-nix.homeManagerModules.sops
+          nur.nixosModules.nur
         ];
       }
     ];
@@ -104,6 +105,7 @@ in
 
         home-manager.sharedModules = [
           sops-nix.homeManagerModules.sops
+          nur.nixosModules.nur
         ];
       }
     ];

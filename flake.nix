@@ -5,6 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nur.url = "github:nix-community/NUR";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +20,7 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, sops-nix, nixos-wsl, ... }:
+  outputs = inputs @ { self, nixpkgs, nixpkgs-unstable, home-manager, sops-nix, nixos-wsl, nur,... }:
     let
       # default user
       user = "aldouse";
@@ -29,7 +31,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit user oceanedge-user inputs nixpkgs nixpkgs-unstable home-manager sops-nix multiwsl2-user nixos-wsl;
+          inherit user oceanedge-user inputs nixpkgs nixpkgs-unstable home-manager sops-nix multiwsl2-user nixos-wsl nur;
         }
       );
     };

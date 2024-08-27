@@ -22,6 +22,8 @@
       unstable.zoom-us
       unstable.cookiecutter
       unstable.gcrane
+      unstable.jetbrains.datagrip
+      unstable.dbmate
 
 
       unstable.python39
