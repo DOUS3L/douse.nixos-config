@@ -31,7 +31,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit user oceanedge-user inputs nixpkgs nixpkgs-unstable home-manager sops-nix multiwsl2-user nixos-wsl nur;
+          inherit user oceanedge-user inputs nixpkgs nixpkgs-unstable home-manager sops-nix multiwsl2-user nixos-wsl;
         }
       );
     };
